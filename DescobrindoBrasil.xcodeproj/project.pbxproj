@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E206C92719756A2200716112 /* BrazilView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92619756A2200716112 /* BrazilView.m */; };
+		E206C92A19756A4200716112 /* WordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92919756A4200716112 /* WordView.m */; };
+		E206C92D19756A5400716112 /* KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92C19756A5400716112 /* KeyboardView.m */; };
+		E206C93019756A6F00716112 /* HangManView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92F19756A6F00716112 /* HangManView.m */; };
+		E206C93319756A8700716112 /* HangControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C93219756A8700716112 /* HangControllerViewController.m */; };
 		E2341ED21973F91B0030043F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2341ED11973F91B0030043F /* Foundation.framework */; };
 		E2341ED41973F91B0030043F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2341ED31973F91B0030043F /* CoreGraphics.framework */; };
 		E2341ED61973F91B0030043F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2341ED51973F91B0030043F /* UIKit.framework */; };
@@ -35,6 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E206C92519756A2200716112 /* BrazilView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrazilView.h; sourceTree = "<group>"; };
+		E206C92619756A2200716112 /* BrazilView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrazilView.m; sourceTree = "<group>"; };
+		E206C92819756A4200716112 /* WordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordView.h; sourceTree = "<group>"; };
+		E206C92919756A4200716112 /* WordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordView.m; sourceTree = "<group>"; };
+		E206C92B19756A5400716112 /* KeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardView.h; sourceTree = "<group>"; };
+		E206C92C19756A5400716112 /* KeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardView.m; sourceTree = "<group>"; };
+		E206C92E19756A6F00716112 /* HangManView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangManView.h; sourceTree = "<group>"; };
+		E206C92F19756A6F00716112 /* HangManView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangManView.m; sourceTree = "<group>"; };
+		E206C93119756A8700716112 /* HangControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangControllerViewController.h; sourceTree = "<group>"; };
+		E206C93219756A8700716112 /* HangControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangControllerViewController.m; sourceTree = "<group>"; };
 		E2341ECE1973F91B0030043F /* DescobrindoBrasil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DescobrindoBrasil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2341ED11973F91B0030043F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E2341ED31973F91B0030043F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,6 +181,8 @@
 			children = (
 				E2341EE91973F91B0030043F /* MainViewController.h */,
 				E2341EEA1973F91B0030043F /* MainViewController.m */,
+				E206C93119756A8700716112 /* HangControllerViewController.h */,
+				E206C93219756A8700716112 /* HangControllerViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -175,6 +192,14 @@
 			children = (
 				E2341EE31973F91B0030043F /* Main_iPhone.storyboard */,
 				E2341EE61973F91B0030043F /* Main_iPad.storyboard */,
+				E206C92519756A2200716112 /* BrazilView.h */,
+				E206C92619756A2200716112 /* BrazilView.m */,
+				E206C92819756A4200716112 /* WordView.h */,
+				E206C92919756A4200716112 /* WordView.m */,
+				E206C92B19756A5400716112 /* KeyboardView.h */,
+				E206C92C19756A5400716112 /* KeyboardView.m */,
+				E206C92E19756A6F00716112 /* HangManView.h */,
+				E206C92F19756A6F00716112 /* HangManView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -277,8 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E206C93019756A6F00716112 /* HangManView.m in Sources */,
 				E2341EEB1973F91B0030043F /* MainViewController.m in Sources */,
+				E206C93319756A8700716112 /* HangControllerViewController.m in Sources */,
 				E2341EE21973F91B0030043F /* AppDelegate.m in Sources */,
+				E206C92A19756A4200716112 /* WordView.m in Sources */,
+				E206C92D19756A5400716112 /* KeyboardView.m in Sources */,
+				E206C92719756A2200716112 /* BrazilView.m in Sources */,
 				E2341EDE1973F91B0030043F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +524,7 @@
 				E2341F051973F91B0030043F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2341F061973F91B0030043F /* Build configuration list for PBXNativeTarget "DescobrindoBrasilTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +533,7 @@
 				E2341F081973F91B0030043F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
