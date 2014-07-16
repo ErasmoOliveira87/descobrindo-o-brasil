@@ -12,11 +12,15 @@
 
 -(void)didSelectChar:(NSString*)character;
 
+-(void)resetButton;
+
 @end
 
 
 @interface KeyboardView : UIView
 
 @property (weak, nonatomic) id<KeyboardViewDelegate> delegate;
+
+@property (nonatomic) NSMutableArray *arrayDeBotoes;
 
 @end
