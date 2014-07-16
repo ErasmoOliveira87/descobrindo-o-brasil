@@ -8,7 +8,29 @@
 
 #import "WordView.h"
 
+@interface WordView ()
+
+@property (nonatomic,strong) NSString * word;
+@property (weak, nonatomic) IBOutlet UILabel *hangWord;
+
+
+@end
+
 @implementation WordView
+
+-(bool)selectChar:(char) caractere
+{
+
+    return false;
+}
+
+
+-(void)resetWithWord:(NSString*)word
+{
+    self.word = word;
+    
+}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
