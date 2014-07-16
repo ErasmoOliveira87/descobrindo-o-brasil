@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BrazilView.h"
 
 @interface MainViewController : UIViewController
 
