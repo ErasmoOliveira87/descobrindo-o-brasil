@@ -10,6 +10,16 @@
 
 @implementation KeyboardView
 
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    
+    if(self) {
+        
+    }
+    
+    return self;
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -17,6 +27,13 @@
         // Initialization code
     }
     return self;
+}
+
+
+- (IBAction)keyTouched:(UIButton *)sender {
+    
+    [self.delegate didSelectChar:sender.titleLabel.text];
+    sender.enabled = NO;
 }
 
 /*

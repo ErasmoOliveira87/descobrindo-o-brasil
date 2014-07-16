@@ -10,7 +10,7 @@
 
 @interface MainViewController ()
 
-@property (strong, nonatomic) BrazilView *brazilView;
+@property (weak, nonatomic) IBOutlet BrazilView *brazilView;
 
 @end
 

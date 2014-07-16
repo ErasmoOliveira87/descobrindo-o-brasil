@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 Matheus Alves Silveira. All rights reserved.
 //
 
-#import "HangControllerViewController.h"
+#import "HangViewController.h"
 
-@interface HangControllerViewController ()
+@interface HangViewController ()
+
 
 @end
 
-@implementation HangControllerViewController
+@implementation HangViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.keyboardView.delegate = self;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -33,6 +37,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)didSelectChar:(NSString *)character {
+    
+    NSLog(@"%@", character);
+    
 }
 
 /*

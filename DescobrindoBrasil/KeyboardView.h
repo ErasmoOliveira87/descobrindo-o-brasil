@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol KeyboardViewDelegate <NSObject>
+
+-(void)didSelectChar:(NSString*)character;
+
+@end
+
+
 @interface KeyboardView : UIView
+
+@property (weak, nonatomic) id<KeyboardViewDelegate> delegate;
 
 @end

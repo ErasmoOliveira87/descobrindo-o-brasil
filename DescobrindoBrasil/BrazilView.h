@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BrazilView : UIView
+@interface BrazilView : UIScrollView <UIScrollViewDelegate>
 
 @end

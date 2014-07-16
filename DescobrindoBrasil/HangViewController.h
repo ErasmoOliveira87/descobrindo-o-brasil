@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KeyboardView.h"
 
-@interface HangControllerViewController : UIViewController
+@interface HangViewController : UIViewController <KeyboardViewDelegate>
+
+@property (weak, nonatomic) IBOutlet KeyboardView *keyboardView;
+
+-(void)didSelectChar:(NSString *)character;
 
 @end
