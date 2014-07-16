@@ -45,6 +45,17 @@
     
 }
 
+-(void)resetButton{
+
+    KeyboardView *viewKeyboard = self.keyboardView;
+    
+    [viewKeyboard buttonEnable];
+    
+
+}
+
+
+
 /*
 #pragma mark - Navigation
 

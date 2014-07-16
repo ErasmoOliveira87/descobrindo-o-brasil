@@ -23,4 +23,9 @@
 
 @property (nonatomic) NSMutableArray *arrayDeBotoes;
 
+
+-(void)addButton:(UIButton *)sender;
+
+-(void)buttonEnable;
+
 @end
