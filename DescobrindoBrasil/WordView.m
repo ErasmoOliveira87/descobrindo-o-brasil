@@ -28,7 +28,18 @@
 -(void)resetWithWord:(NSString*)word
 {
     self.word = word;
+   self.hangWord.text = [self encodingWord:word.length];
     
+    
+    
+}
+-(NSString*)encodingWord:(NSUInteger)wordLenght
+{
+    NSMutableString * string = [[NSMutableString alloc]init];
+    for (int aux = 0; aux<wordLenght; aux++) {
+        [string appendString:@"_"];
+    }
+    return string;
 }
 
 
