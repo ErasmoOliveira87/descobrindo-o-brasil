@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapOverlay.h"
 
 @interface BrazilView : UIScrollView <UIScrollViewDelegate>
 

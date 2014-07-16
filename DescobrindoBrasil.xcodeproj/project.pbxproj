@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1D5FFE1976BF3C00F69A0F /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */; };
 		E206C92719756A2200716112 /* BrazilView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92619756A2200716112 /* BrazilView.m */; };
 		E206C92A19756A4200716112 /* WordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92919756A4200716112 /* WordView.m */; };
 		E206C92D19756A5400716112 /* KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92C19756A5400716112 /* KeyboardView.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA1D5FFC1976BF3C00F69A0F /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlay.h; sourceTree = "<group>"; };
+		AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlay.m; sourceTree = "<group>"; };
 		E206C92519756A2200716112 /* BrazilView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrazilView.h; sourceTree = "<group>"; };
 		E206C92619756A2200716112 /* BrazilView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrazilView.m; sourceTree = "<group>"; };
 		E206C92819756A4200716112 /* WordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordView.h; sourceTree = "<group>"; };
@@ -96,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA1D5FFF1976BF5100F69A0F /* BrazilView */ = {
+			isa = PBXGroup;
+			children = (
+				E206C92519756A2200716112 /* BrazilView.h */,
+				E206C92619756A2200716112 /* BrazilView.m */,
+				AA1D5FFC1976BF3C00F69A0F /* MapOverlay.h */,
+				AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */,
+			);
+			name = BrazilView;
+			sourceTree = "<group>";
+		};
 		E2341EC51973F91B0030043F = {
 			isa = PBXGroup;
 			children = (
@@ -190,10 +204,9 @@
 		E2341F0B1973F9670030043F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA1D5FFF1976BF5100F69A0F /* BrazilView */,
 				E2341EE31973F91B0030043F /* Main_iPhone.storyboard */,
 				E2341EE61973F91B0030043F /* Main_iPad.storyboard */,
-				E206C92519756A2200716112 /* BrazilView.h */,
-				E206C92619756A2200716112 /* BrazilView.m */,
 				E206C92819756A4200716112 /* WordView.h */,
 				E206C92919756A4200716112 /* WordView.m */,
 				E206C92B19756A5400716112 /* KeyboardView.h */,
@@ -306,6 +319,7 @@
 				E2341EEB1973F91B0030043F /* MainViewController.m in Sources */,
 				E206C93319756A8700716112 /* HangViewController.m in Sources */,
 				E2341EE21973F91B0030043F /* AppDelegate.m in Sources */,
+				AA1D5FFE1976BF3C00F69A0F /* MapOverlay.m in Sources */,
 				E206C92A19756A4200716112 /* WordView.m in Sources */,
 				E206C92D19756A5400716112 /* KeyboardView.m in Sources */,
 				E206C92719756A2200716112 /* BrazilView.m in Sources */,
