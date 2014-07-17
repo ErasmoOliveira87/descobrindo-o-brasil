@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol mapOverlayDelegate
+
+-(void)tapOnState:(NSString*)state;
+
+@end
+
+
 @interface MapOverlay : UIView
+
+@property (weak, nonatomic) id<mapOverlayDelegate> delegate;
 
 @end

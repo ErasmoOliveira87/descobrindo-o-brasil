@@ -44,11 +44,16 @@
     UIImage *brazilMap = [UIImage imageNamed:@"brazil_blank_map"];
     UIImageView *mapImageView = [[UIImageView alloc] initWithImage:brazilMap];
     
+    //adiciona a imagem do mapa com o overlay ao mapContainerView
     _mapContainerView = [[UIView alloc] initWithFrame:mapImageView.frame];
     
     [_mapContainerView addSubview:mapImageView];
     
-    [_mapContainerView addSubview:[[MapOverlay alloc] initWithFrame:mapImageView.frame]];
+    
+    MapOverlay *overlay = [[MapOverlay alloc] initWithFrame:mapImageView.frame];
+    _overlay = overlay;
+    
+    [_mapContainerView addSubview:overlay];
     
     [self addSubview:_mapContainerView];
     
@@ -69,6 +74,5 @@
     return self.mapContainerView;
     
 }
-
 
 @end

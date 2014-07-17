@@ -376,6 +376,7 @@
                     </view>
                     <connections>
                         <outlet property="brazilView" destination="aRK-qi-Ivf" id="z8T-yV-MCp"/>
+                        <segue destination="gsy-zp-lae" kind="modal" identifier="HangViewController" id="wID-Bm-2Wj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

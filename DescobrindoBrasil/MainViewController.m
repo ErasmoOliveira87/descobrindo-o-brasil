@@ -16,9 +16,14 @@
 
 @implementation MainViewController
 
+#pragma mark VC Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //recebe eventos de toque do mapa
+    self.brazilView.overlay.delegate = self;
 
 }
 
@@ -26,6 +31,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark MapOverlay Delegate
+
+//verifica se o estado é da região sudeste, em caso afirmativo ativa o segue para o HangViewController
+-(void)tapOnState:(NSString *)state {
+    
+    //informacoes de model
+    NSArray *sudeste = [NSArray arrayWithObjects:@"SP", @"MG", @"ES", @"RJ", nil];
+    
+    for (NSString *sudesteState in sudeste) {
+        
+        if([state isEqualToString:sudesteState])
+            [self performSegueWithIdentifier:@"HangViewController" sender:self];
+    }
 }
 
 @end
