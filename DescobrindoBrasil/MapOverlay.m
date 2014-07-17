@@ -188,6 +188,92 @@
     
     CGPathRelease(path);
     
+    //MS:
+    
+    path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, -(499 - offsetX) , -(262 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(572 - offsetX) , -(351 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(446 - offsetX) , -(415 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(396 - offsetX) , -(309 - offsetY));
+    
+    bezPath = [UIBezierPath bezierPathWithCGPath:path];
+    [self closeAndFlipPath:bezPath];
+    
+    [stateNameForPath setObject:@"MS" forKey:bezPath];
+    
+    CGPathRelease(path);
+    
+    //MT:
+    
+    path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, -(521 - offsetX) , -(410 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(365 - offsetX) , -(456 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(374 - offsetX) , -(574 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(339 - offsetX) , -(598 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(350 - offsetX) , -(627 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(586 - offsetX) , -(601 - offsetY));
+    
+    bezPath = [UIBezierPath bezierPathWithCGPath:path];
+    [self closeAndFlipPath:bezPath];
+    
+    [stateNameForPath setObject:@"MT" forKey:bezPath];
+    
+    CGPathRelease(path);
+    
+    //GO:
+    
+    path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, -(627 - offsetX) , -(460 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(690 - offsetX) , -(490 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(686 - offsetX) , -(514 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(601 - offsetX) , -(520 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(534 - offsetX) , -(408 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(573 - offsetX) , -(381 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(653 - offsetX) , -(405 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(656 - offsetX) , -(429 - offsetY));
+    
+    bezPath = [UIBezierPath bezierPathWithCGPath:path];
+    [self closeAndFlipPath:bezPath];
+    
+    [stateNameForPath setObject:@"GO" forKey:bezPath];
+    
+    CGPathRelease(path);
+    
+    //DF:
+    
+    path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, -(646 - offsetX) , -(467 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(670 - offsetX) , -(467 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(668 - offsetX) , -(451 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(645 - offsetX) , -(450 - offsetY));
+    
+    bezPath = [UIBezierPath bezierPathWithCGPath:path];
+    [self closeAndFlipPath:bezPath];
+    
+    [stateNameForPath setObject:@"DF" forKey:bezPath];
+    
+    CGPathRelease(path);
+    
+    //TO:
+    
+    path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, -(695 - offsetX) , -(531 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(594 - offsetX) , -(547 - offsetY));
+    CGPathAddLineToPoint(path, NULL, -(658 - offsetX) , -(710 - offsetY));
+    
+    bezPath = [UIBezierPath bezierPathWithCGPath:path];
+    [self closeAndFlipPath:bezPath];
+    
+    [stateNameForPath setObject:@"TO" forKey:bezPath];
+    
+    CGPathRelease(path);
+    
+    
     //guarda o dicionario como imutável
     _stateForPath = stateNameForPath;
     
