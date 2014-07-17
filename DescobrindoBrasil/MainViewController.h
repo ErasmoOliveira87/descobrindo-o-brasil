@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BrazilView.h"
+#import "MapOverlay.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <mapOverlayDelegate>
 
 @end

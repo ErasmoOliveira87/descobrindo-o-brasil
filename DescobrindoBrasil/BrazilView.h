@@ -11,4 +11,6 @@
 
 @interface BrazilView : UIScrollView <UIScrollViewDelegate>
 
+@property (weak, nonatomic) MapOverlay *overlay;
+
 @end
