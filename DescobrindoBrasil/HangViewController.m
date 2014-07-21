@@ -7,8 +7,11 @@
 //
 
 #import "HangViewController.h"
+#import "HangManView.h"
 
 @interface HangViewController ()
+@property (weak, nonatomic) IBOutlet HangManView *hangManView;
+@property int errors;
 
 
 @end
@@ -44,12 +47,19 @@
 
 -(void)didSelectChar:(NSString *)character {
     char key = [character characterAtIndex:0];
-    [self.wordView selectChar:key];
+    if(![self.wordView selectChar:key]){
+        self.errors++;
+        [self.hangManView addMember];
+        
+    }
+        
 }
 
 -(void)resetButton{
 
     KeyboardView *viewKeyboard = self.keyboardView;
+    self.errors = 0;
+    [self.wordView resetWithWord:@"WORD"];
     
     [viewKeyboard buttonEnable];
     
