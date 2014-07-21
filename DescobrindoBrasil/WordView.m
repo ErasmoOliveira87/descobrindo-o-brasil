@@ -18,21 +18,33 @@
 
 @implementation WordView
 
--(bool)selectChar:(char) caractere
-{
 
-    return false;
+
+
+-(bool)selectChar:(char) key
+{
+    bool localizedKey = false;
+    for (int aux = 0; aux < self.word.length; aux++)
+    {
+        NSString * str = [[NSString alloc]initWithString:self.hangWord.text];
+        if([self.word characterAtIndex:0] == key) {
+            [str stringByReplacingCharactersInRange:NSMakeRange(aux, 1) withString:@"key"];
+            localizedKey = true;
+        }
+        
+    }
+    return localizedKey;
 }
 
 
 -(void)resetWithWord:(NSString*)word
 {
     self.word = word;
-   self.hangWord.text = [self encodingWord:word.length];
-    
-    
-    
+    self.hangWord.text = [self encodingWord:word.length];
+    [self selectChar:' '];
+    [self selectChar:'-'];
 }
+
 -(NSString*)encodingWord:(NSUInteger)wordLenght
 {
     NSMutableString * string = [[NSMutableString alloc]init];
@@ -62,12 +74,12 @@
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end

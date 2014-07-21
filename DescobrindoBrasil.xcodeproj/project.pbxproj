@@ -209,7 +209,6 @@
 				AA1D5FFF1976BF5100F69A0F /* BrazilView */,
 				E2341EE31973F91B0030043F /* Main_iPhone.storyboard */,
 				E2341EE61973F91B0030043F /* Main_iPad.storyboard */,
-				6FCD80EF1979753B00CA162A /* fundoLeve.png */,
 				E206C92819756A4200716112 /* WordView.h */,
 				E206C92919756A4200716112 /* WordView.m */,
 				E206C92B19756A5400716112 /* KeyboardView.h */,
