@@ -50,13 +50,25 @@
     if(![self.wordView selectChar:key]){
         self.errors++;
         [self.hangManView addMember];
+        if (self.errors > 6) {
+
+            [self lose];
+            
+        }
         
     }
         
 }
 
--(void)resetButton{
+-(void)lose{
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"VOCÊ PERDEU"
+                                                          message:@"Que pena. Tente novamente!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [myAlertView show];
+    [self reset];
+}
 
+
+-(void)reset{
     KeyboardView *viewKeyboard = self.keyboardView;
     self.errors = 0;
     [self.wordView resetWithWord:@"WORD"];
