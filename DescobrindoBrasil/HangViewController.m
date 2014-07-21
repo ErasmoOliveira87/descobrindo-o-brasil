@@ -10,7 +10,7 @@
 #import "HangManView.h"
 
 @interface HangViewController ()
-@property (weak, nonatomic) IBOutlet HangManView *hangManView;
+@property (strong, nonatomic) HangManView *hangManView;
 @property int errors;
 
 
@@ -30,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
+    [self.view addSubview:self.hangManView];
     
     [self.wordView resetWithWord:@"MATHEUS"];
     
