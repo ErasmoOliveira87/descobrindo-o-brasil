@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    [self.wordView resetWithWord:@"matheus"];
+    [self.wordView resetWithWord:@"MATHEUS"];
     
     self.keyboardView.delegate = self;
     

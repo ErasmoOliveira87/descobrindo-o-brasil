@@ -26,11 +26,14 @@
     bool localizedKey = false;
     for (int aux = 0; aux < self.word.length; aux++)
     {
-        NSLog(@"estou aqui");
-        NSString * str = [[NSString alloc]initWithString:self.hangWord.text];
-        if([self.word characterAtIndex:0] == key) {
-            [str stringByReplacingCharactersInRange:NSMakeRange(aux, 1) withString:@"key"];
+        NSMutableString * str = [[NSMutableString alloc]initWithString:self.hangWord.text];
+        
+        if([self.word characterAtIndex:aux] == key) {
+             self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux, 1) withString:[NSString stringWithFormat:@"%c",key]];
+        
+            NSLog(@"%@",str);
             localizedKey = true;
+            [self setNeedsDisplay];
         }
         
     }
