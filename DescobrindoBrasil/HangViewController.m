@@ -30,6 +30,8 @@
     
     self.keyboardView.delegate = self;
     
+    self.wordView.delegate = self;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -42,6 +44,11 @@
 -(void)didSelectChar:(NSString *)character {
     
     NSLog(@"%@", character);
+    WordView *word = self.wordView;
+    
+    
+    [word InLabel:character];
+    
     
 }
 
@@ -53,6 +60,18 @@
     
 
 }
+
+//metodo de protocolo de wordviewprotocol
+-(void)addWordInLabel:(NSString *)latter{
+
+    WordView *word = self.wordView;
+    
+    
+    [word InLabel:latter];
+
+
+}
+
 
 
 

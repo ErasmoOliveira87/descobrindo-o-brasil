@@ -338,6 +338,7 @@
                     </view>
                     <connections>
                         <outlet property="keyboardView" destination="kIx-mK-Z6f" id="gqo-Ab-gdU"/>
+                        <outlet property="wordView" destination="WF4-hI-pwA" id="tez-iV-mU9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpg-Hu-L4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
