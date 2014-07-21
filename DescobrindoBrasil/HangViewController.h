@@ -10,7 +10,7 @@
 #import "KeyboardView.h"
 #import "WordView.h"
 
-@interface HangViewController : UIViewController <KeyboardViewDelegate,WordViewDelegate>
+@interface HangViewController : UIViewController <KeyboardViewDelegate>
 
 @property (weak, nonatomic) IBOutlet KeyboardView *keyboardView;
 

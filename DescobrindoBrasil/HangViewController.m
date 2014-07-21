@@ -28,9 +28,10 @@
 {
     [super viewDidLoad];
     
+    [self.wordView resetWithWord:@"matheus"];
+    
     self.keyboardView.delegate = self;
     
-    self.wordView.delegate = self;
     
     // Do any additional setup after loading the view.
 }
@@ -42,14 +43,8 @@
 }
 
 -(void)didSelectChar:(NSString *)character {
-    
-    NSLog(@"%@", character);
-    WordView *word = self.wordView;
-    
-    
-    [word InLabel:character];
-    
-    
+    char key = [character characterAtIndex:0];
+    [self.wordView selectChar:key];
 }
 
 -(void)resetButton{
@@ -61,16 +56,6 @@
 
 }
 
-//metodo de protocolo de wordviewprotocol
--(void)addWordInLabel:(NSString *)latter{
-
-    WordView *word = self.wordView;
-    
-    
-    [word InLabel:latter];
-
-
-}
 
 
 

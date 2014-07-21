@@ -26,6 +26,7 @@
     bool localizedKey = false;
     for (int aux = 0; aux < self.word.length; aux++)
     {
+        NSLog(@"estou aqui");
         NSString * str = [[NSString alloc]initWithString:self.hangWord.text];
         if([self.word characterAtIndex:0] == key) {
             [str stringByReplacingCharactersInRange:NSMakeRange(aux, 1) withString:@"key"];
@@ -65,12 +66,7 @@
 }
 
 
--(void)InLabel:(NSString*)latter
-{
 
-    self.hangWord.text = latter;
-
-}
 
 
 /*

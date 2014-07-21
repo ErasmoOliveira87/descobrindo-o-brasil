@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FCD80F01979753B00CA162A /* fundoLeve.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCD80EF1979753B00CA162A /* fundoLeve.png */; };
 		AA1D5FFE1976BF3C00F69A0F /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */; };
 		E206C92719756A2200716112 /* BrazilView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92619756A2200716112 /* BrazilView.m */; };
 		E206C92A19756A4200716112 /* WordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92919756A4200716112 /* WordView.m */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6FCD80EF1979753B00CA162A /* fundoLeve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fundoLeve.png; path = ../../../Desktop/fundoLeve.png; sourceTree = "<group>"; };
 		AA1D5FFC1976BF3C00F69A0F /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlay.h; sourceTree = "<group>"; };
 		AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlay.m; sourceTree = "<group>"; };
 		E206C92519756A2200716112 /* BrazilView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrazilView.h; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FCD80F01979753B00CA162A /* fundoLeve.png in Resources */,
 				E2341EE81973F91B0030043F /* Main_iPad.storyboard in Resources */,
 				E2341EED1973F91B0030043F /* Images.xcassets in Resources */,
 				E2341EE51973F91B0030043F /* Main_iPhone.storyboard in Resources */,

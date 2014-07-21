@@ -9,18 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol WordViewDelegate <NSObject>
-
--(void)addWordInLabel:(NSString*) latter;
-
-@end
 
 @interface WordView : UIView
 
 
-@property (weak, nonatomic) id<WordViewDelegate> delegate;
+-(bool)selectChar:(char) key;
 
--(void)InLabel:(NSString*)latter;
+-(void)resetWithWord:(NSString*)word;
+
 
 
 @end
