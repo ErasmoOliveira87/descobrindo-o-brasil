@@ -321,16 +321,6 @@
                                             <action selector="keyTouched:" destination="kIx-mK-Z6f" eventType="touchUpInside" id="ZdL-5r-8XT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWY-b5-Tfk">
-                                        <rect key="frame" x="506" y="181" width="82" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="New Game" backgroundImage="brazil_blank_map">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="confusao:" destination="kIx-mK-Z6f" eventType="touchUpInside" id="6d2-63-6yd"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGD-5e-99q" customClass="HangManView">
@@ -416,7 +406,6 @@
         <image name="Y" width="35" height="26"/>
         <image name="Z" width="35" height="26"/>
         <image name="azulClaroFundo" width="696" height="212"/>
-        <image name="brazil_blank_map" width="1000" height="1000"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

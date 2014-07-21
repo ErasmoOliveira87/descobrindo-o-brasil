@@ -43,12 +43,7 @@
 }
 
 
-- (IBAction)confusao:(UIButton *)sender
-{
-    [self.delegate resetButton];
-    
-    NSLog(@"reset button!");
-}
+
 
 -(void)addButton:(UIButton *)sender{
 
