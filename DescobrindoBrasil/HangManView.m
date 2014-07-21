@@ -30,6 +30,10 @@
 
 @property (nonatomic, strong) NSArray *bodyParts;
 
+@property (nonatomic, strong) UIView *hangBase;
+@property (nonatomic, strong) UIView *hangTower;
+@property (nonatomic, strong) UIView *hangTop;
+
 @property (nonatomic) int bodyCount;
 
 @end
@@ -41,6 +45,7 @@
     self = [super initWithFrame:frame];
     if (self) {
 
+        [self drawHang];
         [self drawHangMan];
         
         self.bodyParts = [[NSArray alloc] initWithObjects:self.head, self.body, self.leftLeg, self.leftArm, self.rightArm, self.rightLeg, self.upperLeg, self.upperArm, nil];
@@ -48,6 +53,26 @@
         
     }
     return self;
+}
+
+-(void) drawHang
+{
+
+    UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:1.0];
+
+
+    self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 500, 500)];
+    [self.hangBase setBackgroundColor:blackColor];
+    [self addSubview:self.hangBase];
+    
+    self.hangTower = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 500, 500)];
+    [self.hangTower setBackgroundColor:blackColor];
+    [self addSubview:self.hangTower];
+    
+    self.hangTop = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 500, 500)];
+    [self.hangTop setBackgroundColor:blackColor];
+    [self addSubview:self.hangTop];
+
 }
 
 -(void) drawHangMan
