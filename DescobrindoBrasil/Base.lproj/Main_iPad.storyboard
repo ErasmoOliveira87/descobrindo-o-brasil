@@ -33,7 +33,7 @@
                                     <outlet property="hangWord" destination="TSS-QU-fNp" id="CwA-ee-LkN"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="azulClaroFundo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nkk-Qk-n28">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="azulClaroFundo" translatesAutoresizingMaskIntoConstraints="NO" id="Nkk-Qk-n28">
                                 <rect key="frame" x="83" y="731" width="622" height="261"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -45,7 +45,7 @@
                                         <rect key="frame" x="228" y="17" width="47" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="B" image="B.png">
+                                        <state key="normal" title="B" image="B">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -56,7 +56,7 @@
                                         <rect key="frame" x="143" y="20" width="45" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="A" image="A.png"/>
+                                        <state key="normal" title="A" image="A"/>
                                         <connections>
                                             <action selector="keyTouched:" destination="kIx-mK-Z6f" eventType="touchUpInside" id="pnm-Cl-cBh"/>
                                         </connections>
@@ -65,7 +65,7 @@
                                         <rect key="frame" x="382" y="20" width="47" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="1"/>
-                                        <state key="normal" title="D" image="D.png"/>
+                                        <state key="normal" title="D" image="D"/>
                                         <connections>
                                             <action selector="keyTouched:" destination="kIx-mK-Z6f" eventType="touchUpInside" id="zAb-7g-WZr"/>
                                         </connections>
@@ -74,7 +74,7 @@
                                         <rect key="frame" x="27" y="60" width="46" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="E" image="E.png">
+                                        <state key="normal" title="E" image="E">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -85,7 +85,7 @@
                                         <rect key="frame" x="81" y="60" width="45" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="F" image="F.png">
+                                        <state key="normal" title="F" image="F">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -96,7 +96,7 @@
                                         <rect key="frame" x="142" y="60" width="49" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="G" image="G.png">
+                                        <state key="normal" title="G" image="G">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -107,7 +107,7 @@
                                         <rect key="frame" x="229" y="60" width="49" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="H" image="H.png">
+                                        <state key="normal" title="H" image="H">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -118,7 +118,7 @@
                                         <rect key="frame" x="303" y="60" width="49" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="I" image="I.png">
+                                        <state key="normal" title="I" image="I">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -129,7 +129,7 @@
                                         <rect key="frame" x="383" y="60" width="43" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="J" image="J.png">
+                                        <state key="normal" title="J" image="J">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -140,7 +140,7 @@
                                         <rect key="frame" x="439" y="60" width="49" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="K" image="K.png">
+                                        <state key="normal" title="K" image="K">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -151,7 +151,7 @@
                                         <rect key="frame" x="506" y="60" width="45" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="L" image="L.png">
+                                        <state key="normal" title="L" image="L">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -162,7 +162,7 @@
                                         <rect key="frame" x="81" y="98" width="55" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="M" image="M.png">
+                                        <state key="normal" title="M" image="M">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -173,7 +173,7 @@
                                         <rect key="frame" x="142" y="98" width="49" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="N" image="N.png">
+                                        <state key="normal" title="N" image="N">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -184,7 +184,7 @@
                                         <rect key="frame" x="229" y="98" width="51" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="O" image="O.png">
+                                        <state key="normal" title="O" image="O">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -195,7 +195,7 @@
                                         <rect key="frame" x="303" y="98" width="47" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="P" image="P.png">
+                                        <state key="normal" title="P" image="P">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -206,7 +206,7 @@
                                         <rect key="frame" x="383" y="99" width="52" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="Q" image="Q.png">
+                                        <state key="normal" title="Q" image="Q">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -217,7 +217,7 @@
                                         <rect key="frame" x="439" y="98" width="49" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="R" image="R.png">
+                                        <state key="normal" title="R" image="R">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -228,7 +228,7 @@
                                         <rect key="frame" x="142" y="136" width="47" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="S" image="S.png">
+                                        <state key="normal" title="S" image="S">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -239,7 +239,7 @@
                                         <rect key="frame" x="229" y="136" width="45" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="T" image="T.png">
+                                        <state key="normal" title="T" image="T">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -250,7 +250,7 @@
                                         <rect key="frame" x="303" y="136" width="49" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="U" image="U.png">
+                                        <state key="normal" title="U" image="U">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -261,7 +261,7 @@
                                         <rect key="frame" x="383" y="136" width="45" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="V" image="V.png">
+                                        <state key="normal" title="V" image="V">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -272,7 +272,7 @@
                                         <rect key="frame" x="142" y="173" width="57" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="W" image="W.png">
+                                        <state key="normal" title="W" image="W">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -283,7 +283,7 @@
                                         <rect key="frame" x="229" y="173" width="46" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="X" image="X.png">
+                                        <state key="normal" title="X" image="X">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -294,7 +294,7 @@
                                         <rect key="frame" x="303" y="173" width="47" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="Y" image="Y.png">
+                                        <state key="normal" title="Y" image="Y">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -305,7 +305,7 @@
                                         <rect key="frame" x="383" y="173" width="46" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" title="Z" image="Z.png">
+                                        <state key="normal" title="Z" image="Z">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -316,7 +316,7 @@
                                         <rect key="frame" x="303" y="17" width="47" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="1"/>
-                                        <state key="normal" title="C" image="C.png"/>
+                                        <state key="normal" title="C" image="C"/>
                                         <connections>
                                             <action selector="keyTouched:" destination="kIx-mK-Z6f" eventType="touchUpInside" id="ZdL-5r-8XT"/>
                                         </connections>
@@ -383,33 +383,33 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A.png" width="35" height="26"/>
-        <image name="B.png" width="37" height="26"/>
-        <image name="C.png" width="36" height="26"/>
-        <image name="D.png" width="36" height="26"/>
-        <image name="E.png" width="35" height="26"/>
-        <image name="F.png" width="34" height="26"/>
-        <image name="G.png" width="37" height="26"/>
-        <image name="H.png" width="36" height="26"/>
-        <image name="I.png" width="28" height="26"/>
-        <image name="J.png" width="33" height="26"/>
-        <image name="K.png" width="36" height="26"/>
-        <image name="L.png" width="34" height="26"/>
-        <image name="M.png" width="39" height="26"/>
-        <image name="N.png" width="36" height="26"/>
-        <image name="O.png" width="37" height="26"/>
-        <image name="P.png" width="35" height="26"/>
-        <image name="Q.png" width="38" height="26"/>
-        <image name="R.png" width="36" height="26"/>
-        <image name="S.png" width="35" height="26"/>
-        <image name="T.png" width="34" height="26"/>
-        <image name="U.png" width="36" height="26"/>
-        <image name="V.png" width="34" height="26"/>
-        <image name="W.png" width="40" height="26"/>
-        <image name="X.png" width="35" height="26"/>
-        <image name="Y.png" width="35" height="26"/>
-        <image name="Z.png" width="35" height="26"/>
-        <image name="azulClaroFundo.png" width="696" height="212"/>
+        <image name="A" width="35" height="26"/>
+        <image name="B" width="37" height="26"/>
+        <image name="C" width="36" height="26"/>
+        <image name="D" width="36" height="26"/>
+        <image name="E" width="35" height="26"/>
+        <image name="F" width="34" height="26"/>
+        <image name="G" width="37" height="26"/>
+        <image name="H" width="36" height="26"/>
+        <image name="I" width="28" height="26"/>
+        <image name="J" width="33" height="26"/>
+        <image name="K" width="36" height="26"/>
+        <image name="L" width="34" height="26"/>
+        <image name="M" width="39" height="26"/>
+        <image name="N" width="36" height="26"/>
+        <image name="O" width="37" height="26"/>
+        <image name="P" width="35" height="26"/>
+        <image name="Q" width="38" height="26"/>
+        <image name="R" width="36" height="26"/>
+        <image name="S" width="35" height="26"/>
+        <image name="T" width="34" height="26"/>
+        <image name="U" width="36" height="26"/>
+        <image name="V" width="34" height="26"/>
+        <image name="W" width="40" height="26"/>
+        <image name="X" width="35" height="26"/>
+        <image name="Y" width="35" height="26"/>
+        <image name="Z" width="35" height="26"/>
+        <image name="azulClaroFundo" width="696" height="212"/>
         <image name="brazil_blank_map" width="1000" height="1000"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
