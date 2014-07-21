@@ -47,25 +47,32 @@
 
 -(void)didSelectChar:(NSString *)character {
     char key = [character characterAtIndex:0];
-    if(![self.wordView selectChar:key]){
+    int control = [self.wordView selectChar:key];
+    if(control ==0){
         self.errors++;
         [self.hangManView addMember];
         if (self.errors > 6) {
-
-            [self lose];
             
+            [self alert:@"VOCÊ PERDEU" :@"Que pena, não foi dessa vez" ];
         }
-        
     }
-        
+    else if (control == 2)
+    {
+       [self alert:@"VOCÊ GANHOU" :@"Muito Bom, Meus Parabéns, Continue assim" ];
+    }
+    
 }
 
--(void)lose{
-    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"VOCÊ PERDEU"
-                                                          message:@"Que pena. Tente novamente!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+
+
+-(void)alert:(NSString*)title: (NSString*)subtitle{
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
+                                                          message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [myAlertView show];
     [self reset];
 }
+
+
 
 
 -(void)reset{
@@ -75,7 +82,7 @@
     
     [viewKeyboard buttonEnable];
     
-
+    
 }
 
 
@@ -83,14 +90,14 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

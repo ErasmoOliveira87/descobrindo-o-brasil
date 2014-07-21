@@ -13,7 +13,7 @@
 @interface WordView : UIView
 
 
--(bool)selectChar:(char) key;
+-(int)selectChar:(char) key;
 
 -(void)resetWithWord:(NSString*)word;
 

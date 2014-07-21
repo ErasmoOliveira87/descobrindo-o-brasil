@@ -21,23 +21,25 @@
 
 
 
--(bool)selectChar:(char) key
+-(int)selectChar:(char) key
 {
-    bool localizedKey = false;
+    int control = 0;
     for (int aux = 0; aux < self.word.length; aux++)
     {
         NSMutableString * str = [[NSMutableString alloc]initWithString:self.hangWord.text];
         
         if([self.word characterAtIndex:aux] == key) {
              self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux, 1) withString:[NSString stringWithFormat:@"%c",key]];
-        
-            NSLog(@"%@",str);
-            localizedKey = true;
+            if ([self.word isEqualToString:self.hangWord.text]) {
+                control = 2;
+            }
+            else
+                control = 1;
             [self setNeedsDisplay];
         }
         
     }
-    return localizedKey;
+    return control;
 }
 
 
