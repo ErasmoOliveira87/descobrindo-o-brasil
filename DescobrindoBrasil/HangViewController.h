@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "KeyboardView.h"
 #import "WordView.h"
+#import "HangManWordLottery.h"
 
 @interface HangViewController : UIViewController <KeyboardViewDelegate>
 
 @property (weak, nonatomic) IBOutlet KeyboardView *keyboardView;
 
 @property(nonatomic)IBOutlet WordView *wordView;
+
+@property(strong,nonatomic) HangManWordLottery *hangManWordLottery;
 
 
 
