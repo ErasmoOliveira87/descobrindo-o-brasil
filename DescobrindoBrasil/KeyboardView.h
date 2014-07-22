@@ -21,10 +21,6 @@
 
 @property (weak, nonatomic) id<KeyboardViewDelegate> delegate;
 
-@property (nonatomic) NSMutableArray *arrayDeBotoes;
-
-
--(void)addButton:(UIButton *)sender;
 
 -(void)buttonEnable;
 

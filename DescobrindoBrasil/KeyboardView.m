@@ -14,8 +14,6 @@
     
     self = [super initWithCoder:aDecoder];
     
-    self.arrayDeBotoes = [[NSMutableArray alloc]init];
-    
     if(self) {
         
     }
@@ -36,36 +34,25 @@
     
     [self.delegate didSelectChar:sender.titleLabel.text];
     
-    [self addButton:sender];
-    
     sender.enabled = NO;
     sender.hidden = YES;
 }
 
 
-
-
--(void)addButton:(UIButton *)sender{
-
-
-    [self.arrayDeBotoes addObject:sender];
-
-}
-
 -(void)buttonEnable{
-
-    int contador=0;
     
-    while(contador<[self.arrayDeBotoes count]){
-    
-    UIButton *botton = self.arrayDeBotoes[contador];
-        
-        botton.enabled = YES;
-        botton.hidden = NO;
-        
-        contador++;
+    for(UIView *subView in self.subviews )
+    {
+        if([subView isKindOfClass:[UIButton class]]){
+            
+            UIButton *button = (UIButton *) subView;
+            
+            NSLog(@"valor botao %@", button.titleLabel.text);
+            
+            button.enabled = YES;
+            button.hidden = NO;
+        }
     }
-
 }
 
 

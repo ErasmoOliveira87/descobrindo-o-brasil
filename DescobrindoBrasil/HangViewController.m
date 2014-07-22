@@ -69,9 +69,9 @@
 
 
 -(void)alert:(NSString*)title: (NSString*)subtitle{
-    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
-                                                          message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [myAlertView show];
+//    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
+//                                                          message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+//    [myAlertView show];
     [self reset];
 }
 
@@ -79,11 +79,10 @@
 
 
 -(void)reset{
-    KeyboardView *viewKeyboard = self.keyboardView;
     self.errors = 0;
     [self.wordView resetWithWord:@"WORD"];
     
-    [viewKeyboard buttonEnable];
+    [self.keyboardView buttonEnable];
     
     
 }
