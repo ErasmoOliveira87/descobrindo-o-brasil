@@ -75,8 +75,9 @@
 
 -(void)alert:(NSString*)title: (NSString*)subtitle{
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
-message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                                                          message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [myAlertView show];
+    [self reset];
 }
 
 
