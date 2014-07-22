@@ -37,6 +37,7 @@
 
 //verifica se o estado é da região sudeste, em caso afirmativo ativa o segue para o HangViewController
 -(void)tapOnState:(NSString *)state {
+    NSLog(@"passei aqui");
     
     //informacoes de model
     NSArray *sudeste = [NSArray arrayWithObjects:@"SP", @"MG", @"ES", @"RJ", nil];
