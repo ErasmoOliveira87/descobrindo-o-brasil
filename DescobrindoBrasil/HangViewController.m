@@ -92,7 +92,7 @@
     
     [self.keyboardView buttonEnable];
     
-    
+    [self.hangManView eraseHangMan];
 }
 
 
