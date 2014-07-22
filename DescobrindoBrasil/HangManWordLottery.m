@@ -18,7 +18,7 @@
     
     NSDictionary *newDicionario = [self allWord];
     
-    NSArray *arrayCategorias= @[@"Frutas",@"Ferramentas"];
+    NSArray *arrayCategorias= @[@"Verbo",@"Adverbio"];
     
     int randowIndexCategoria = arc4random() % [arrayCategorias count];
     
