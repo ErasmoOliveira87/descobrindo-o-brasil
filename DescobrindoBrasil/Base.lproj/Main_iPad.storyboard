@@ -345,11 +345,12 @@
                     <connections>
                         <outlet property="keyboardView" destination="kIx-mK-Z6f" id="gqo-Ab-gdU"/>
                         <outlet property="wordView" destination="WF4-hI-pwA" id="tez-iV-mU9"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="MainViewController" id="fgb-bV-3AV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpg-Hu-L4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="546" y="-1129"/>
+            <point key="canvasLocation" x="594" y="-993"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -385,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-384" y="-384"/>
+            <point key="canvasLocation" x="-670" y="-800"/>
         </scene>
     </scenes>
     <resources>
