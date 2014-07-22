@@ -8,6 +8,8 @@
 
 #import "HangViewController.h"
 #import "HangManView.h"
+#import "HangManWordLottery.h"
+
 
 @interface HangViewController ()
 @property (strong, nonatomic) HangManView *hangManView;
@@ -34,7 +36,11 @@
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
     [self.view addSubview:self.hangManView];
     
-    [self.wordView resetWithWord:@"MATHEUS"];
+    self.hangManWordLottery = [[HangManWordLottery alloc]init];
+    
+    NSString *wordLottery = [self.hangManWordLottery getRandomWord];
+    
+    [self.wordView resetWithWord:wordLottery];
     
     self.keyboardView.delegate = self;
     
@@ -80,7 +86,9 @@
 
 -(void)reset{
     self.errors = 0;
-    [self.wordView resetWithWord:@"WORD"];
+    
+    NSString *newWordLottery = [self.hangManWordLottery getRandomWord];
+    [self.wordView resetWithWord:newWordLottery];
     
     [self.keyboardView buttonEnable];
     

@@ -11,6 +11,11 @@
 @interface HangManWordLottery : NSObject
 
 
-@property(nonatomic,strong)NSString *word;
+
+
+
+-(NSString*)getRandomWord;
+
+-(NSDictionary*)allWord;
 
 @end
