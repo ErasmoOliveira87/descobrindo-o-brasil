@@ -11,5 +11,6 @@
 @interface HangManView : UIView
 
 -(void) addMember;
+-(void) eraseHangMan;
 
 @end

@@ -33,6 +33,9 @@
             
          self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux *2 , 1) withString:[NSString stringWithFormat:@"%c",key]];
         self.updatedWord = [[self.updatedWord stringByReplacingCharactersInRange:NSMakeRange(aux , 1) withString:[NSString stringWithFormat:@"%c",key]]mutableCopy];
+            NSLog(@"%@",self.word);
+            NSLog(@"%@",self.hangWord.text);
+            NSLog(@"%@",self.updatedWord);
             if ([self.word isEqualToString:self.updatedWord]) {
                 control = 2;
                 

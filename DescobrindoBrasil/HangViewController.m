@@ -93,7 +93,7 @@ message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", ni
     
     [self.keyboardView buttonEnable];
     
-    
+    [self.hangManView eraseHangMan];
 }
 
 

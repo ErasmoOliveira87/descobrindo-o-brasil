@@ -42,7 +42,8 @@
 -(void)initialize {
     
     UIImage *brazilMap = [UIImage imageNamed:@"brazil_blank_map"];
-    UIImageView *mapImageView = [[UIImageView alloc] initWithImage:brazilMap];
+    UIImageView *mapImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    mapImageView.image = brazilMap;
     
     //adiciona a imagem do mapa com o overlay ao mapContainerView
     _mapContainerView = [[UIView alloc] initWithFrame:mapImageView.frame];

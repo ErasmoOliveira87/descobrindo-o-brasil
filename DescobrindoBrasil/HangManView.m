@@ -28,7 +28,7 @@
 @property (nonatomic, strong) UIView *leftLeg;
 @property (nonatomic, strong) UIView *rightLeg;
 
-@property (nonatomic, strong) NSArray *bodyParts;
+@property (nonatomic, strong) NSMutableArray *bodyParts;
 
 @property (nonatomic, strong) UIView *hangBase;
 @property (nonatomic, strong) UIView *hangTower;
@@ -48,9 +48,6 @@
         [self drawHang];
         [self drawHangMan];
         
-        self.bodyParts = [[NSArray alloc] initWithObjects:self.head, self.body, self.upperArm, self.leftLeg, self.leftArm, self.rightArm, self.rightLeg, nil];
-        self.bodyCount = 0;
-        
     }
     return self;
 }
@@ -59,8 +56,6 @@
 {
 
     UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:1.0];
-
-    
 
     self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(100, 450, 100, 30)];
     [self.hangBase setBackgroundColor:blackColor];
@@ -113,7 +108,10 @@
     self.leftLeg = [[UIView alloc] initWithFrame: CGRectMake(370, 380, 10, 100)];
     [self.leftLeg setBackgroundColor:blackColor];
     
-    
+    self.bodyParts = [[NSMutableArray alloc] initWithObjects:self.head, self.body, self.upperArm, self.leftLeg, self.leftArm, self.rightArm, self.rightLeg, nil];
+    self.bodyCount = 0;
+    NSLog(@"%d", self.bodyCount);
+    NSLog(@"%d", [self.bodyParts count]);
 }
 
 
@@ -134,10 +132,26 @@
     if (self.bodyCount <= [self.bodyParts count])
     {
         [self addSubview:self.bodyParts[self.bodyCount]];
+        NSLog(@"add member");
         self.bodyCount++;
     }
     
+}
+
+-(void) eraseHangMan
+{
+ 
+    NSLog(@"eraseHangMan %d", self.bodyCount);
+    int i = 0;
+    while (i < [self.bodyParts count]) {
+        [self.bodyParts[i] removeFromSuperview];
+        i++;
+    }
     
+    [self.bodyParts removeAllObjects];
+    
+    [self drawHang];
+  
 }
 
 @end
