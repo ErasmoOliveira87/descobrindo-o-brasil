@@ -12,6 +12,7 @@
 
 @property (nonatomic,strong) NSString * word;
 @property (weak, nonatomic) IBOutlet UILabel *hangWord;
+@property (nonatomic, strong) NSMutableString * updatedWord;
 
 
 @end
@@ -29,26 +30,46 @@
         NSMutableString * str = [[NSMutableString alloc]initWithString:self.hangWord.text];
         
         if([self.word characterAtIndex:aux] == key) {
-             self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux, 1) withString:[NSString stringWithFormat:@"%c",key]];
-            if ([self.word isEqualToString:self.hangWord.text]) {
+            
+         self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux *2 , 1) withString:[NSString stringWithFormat:@"%c",key]];
+        self.updatedWord = [[self.updatedWord stringByReplacingCharactersInRange:NSMakeRange(aux , 1) withString:[NSString stringWithFormat:@"%c",key]]mutableCopy];
+            if ([self.word isEqualToString:self.updatedWord]) {
                 control = 2;
+                
             }
             else
                 control = 1;
-            [self setNeedsDisplay];
+           
         }
         
     }
     return control;
 }
 
+-(void)updateDisplayWord:(NSString*)word
+{
+    NSMutableString *string = [[NSMutableString alloc]init];
+    NSMutableString *stringWord = [[NSMutableString alloc]init];
+
+    for (int aux = 0; aux<word.length; aux++) {
+        [string appendString:[NSString stringWithFormat:@"%c",[word characterAtIndex:aux]]];
+        [stringWord appendString:[NSString stringWithFormat:@"%c",[word characterAtIndex:aux]]];
+        [string appendString:@" "];
+    }
+    self.hangWord.text = string;
+    self.updatedWord = stringWord;
+    NSLog(@"%@",self.updatedWord);
+     [self setNeedsDisplay];
+}
+
 
 -(void)resetWithWord:(NSString*)word
 {
     self.word = word;
-    self.hangWord.text = [self encodingWord:word.length];
+    NSString * str = [self encodingWord:word.length];
     [self selectChar:' '];
     [self selectChar:'-'];
+    [self updateDisplayWord:str];
 }
 
 -(NSString*)encodingWord:(NSUInteger)wordLenght
