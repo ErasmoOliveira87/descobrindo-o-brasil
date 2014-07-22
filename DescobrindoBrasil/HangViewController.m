@@ -11,7 +11,7 @@
 #import "HangManWordLottery.h"
 
 
-@interface HangViewController ()
+@interface HangViewController () <UIAlertViewDelegate>
 @property (strong, nonatomic) HangManView *hangManView;
 @property int errors;
 
@@ -44,7 +44,6 @@
     
     self.keyboardView.delegate = self;
     
-    
     // Do any additional setup after loading the view.
 }
 
@@ -75,14 +74,16 @@
 
 
 -(void)alert:(NSString*)title: (NSString*)subtitle{
-//    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
-//                                                          message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-//    [myAlertView show];
-    [self reset];
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
+message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [myAlertView show];
 }
 
 
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self reset];
+}
 
 -(void)reset{
     self.errors = 0;
