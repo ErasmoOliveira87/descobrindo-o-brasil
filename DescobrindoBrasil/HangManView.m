@@ -24,7 +24,6 @@
 @property (nonatomic, strong) UIView *upperArm;
 @property (nonatomic, strong) UIView *leftArm;
 @property (nonatomic, strong) UIView *rightArm;
-@property (nonatomic, strong) UIView *upperLeg;
 @property (nonatomic, strong) UIView *leftLeg;
 @property (nonatomic, strong) UIView *rightLeg;
 
@@ -52,6 +51,7 @@
     return self;
 }
 
+//Desenha a forca
 -(void) drawHang
 {
 
@@ -71,87 +71,80 @@
 
 }
 
+//Desenha o boneco
 -(void) drawHangMan
 {
-    
-    UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:1.0];
+    int alpha = 0.0;
+    UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:alpha];
     
     self.head = [[UIView alloc] initWithFrame: CGRectMake(350, 180, 70, 70)];
     [self.head setBackgroundColor:blackColor];
     self.head.layer.cornerRadius = 30;
     
-    
     self.body = [[UIView alloc] initWithFrame: CGRectMake(380, 220, 10, 160)];
     [self.body setBackgroundColor:blackColor];
-    
     
     self.upperArm = [[UIView alloc] initWithFrame: CGRectMake(370, 270, 30, 10)];
     [self.upperArm setBackgroundColor:blackColor];
     
-    
     self.rightArm = [[UIView alloc] initWithFrame: CGRectMake(360, 270, 10, 80)];
     [self.rightArm setBackgroundColor:blackColor];
-    
     
     self.leftArm = [[UIView alloc] initWithFrame: CGRectMake(400, 270, 10, 80)];
     [self.leftArm setBackgroundColor:blackColor];
     
-    
-    //self.upperLeg = [[UIView alloc] initWithFrame: CGRectMake(370, 380, 20, 10)];
-    //[self.upperLeg setBackgroundColor:[[UIColor alloc] initWithRed:0 green:255 blue:0 alpha:1.0]];
-    
-    
     self.rightLeg = [[UIView alloc] initWithFrame: CGRectMake(390, 380, 10, 100)];
     [self.rightLeg setBackgroundColor:blackColor];
-    
     
     self.leftLeg = [[UIView alloc] initWithFrame: CGRectMake(370, 380, 10, 100)];
     [self.leftLeg setBackgroundColor:blackColor];
     
     self.bodyParts = [[NSMutableArray alloc] initWithObjects:self.head, self.body, self.upperArm, self.leftLeg, self.leftArm, self.rightArm, self.rightLeg, nil];
     self.bodyCount = 0;
-    NSLog(@"%d", self.bodyCount);
-    NSLog(@"%d", [self.bodyParts count]);
-}
-
-
--(void) addMember
-{
     
-    /*
-     [self addSubview:self.head];
-     [self addSubview:self.body];
-     [self addSubview:self.upperArm];
-     [self addSubview:self.rightArm];
-     [self addSubview:self.leftArm];
-     [self addSubview:self.upperLeg];
-     [self addSubview:self.rightLeg];
-     [self addSubview:self.leftLeg];
-     */
-
-    if (self.bodyCount <= [self.bodyParts count])
-    {
-        [self addSubview:self.bodyParts[self.bodyCount]];
-        NSLog(@"add member");
-        self.bodyCount++;
-    }
     
-}
-
--(void) eraseHangMan
-{
- 
-    NSLog(@"eraseHangMan %d", self.bodyCount);
     int i = 0;
     while (i < [self.bodyParts count]) {
-        [self.bodyParts[i] removeFromSuperview];
+        [self addSubview:self.bodyParts[i]];
         i++;
     }
     
-    [self.bodyParts removeAllObjects];
+
+}
+
+//Adiciona os membros no boneco
+-(void) addMember
+{
+    int alpha = 1.0;
+    UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:alpha];
     
-    [self drawHang];
-  
+    [self.bodyParts[self.bodyCount] setBackgroundColor:blackColor];
+    
+    self.bodyCount++;
+
+    [self setNeedsDisplay];
+    
+}
+
+//reinicia o boneco
+-(void) eraseHangMan
+{
+
+    self.bodyCount = 0;
+    
+    int alpha = 0.0;
+    UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:alpha];
+    
+    [self.head setBackgroundColor:blackColor];
+    [self.body setBackgroundColor:blackColor];
+    [self.upperArm setBackgroundColor:blackColor];
+    [self.rightArm setBackgroundColor:blackColor];
+    [self.leftArm setBackgroundColor:blackColor];
+    [self.rightLeg setBackgroundColor:blackColor];
+    [self.leftLeg setBackgroundColor:blackColor];
+    
+    [self setNeedsDisplay];
+
 }
 
 @end
