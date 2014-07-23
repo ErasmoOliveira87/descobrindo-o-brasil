@@ -390,32 +390,32 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A" width="35" height="26"/>
-        <image name="B" width="37" height="26"/>
-        <image name="C" width="36" height="26"/>
-        <image name="D" width="36" height="26"/>
-        <image name="E" width="35" height="26"/>
-        <image name="F" width="34" height="26"/>
-        <image name="G" width="37" height="26"/>
-        <image name="H" width="36" height="26"/>
-        <image name="I" width="28" height="26"/>
-        <image name="J" width="33" height="26"/>
-        <image name="K" width="36" height="26"/>
-        <image name="L" width="34" height="26"/>
-        <image name="M" width="39" height="26"/>
-        <image name="N" width="36" height="26"/>
-        <image name="O" width="37" height="26"/>
-        <image name="P" width="35" height="26"/>
-        <image name="Q" width="38" height="26"/>
-        <image name="R" width="36" height="26"/>
-        <image name="S" width="35" height="26"/>
-        <image name="T" width="34" height="26"/>
-        <image name="U" width="36" height="26"/>
-        <image name="V" width="34" height="26"/>
-        <image name="W" width="40" height="26"/>
-        <image name="X" width="35" height="26"/>
-        <image name="Y" width="35" height="26"/>
-        <image name="Z" width="35" height="26"/>
+        <image name="A" width="67" height="54"/>
+        <image name="B" width="65" height="53"/>
+        <image name="C" width="65" height="53"/>
+        <image name="D" width="66" height="53"/>
+        <image name="E" width="63" height="53"/>
+        <image name="F" width="63" height="53"/>
+        <image name="G" width="71" height="53"/>
+        <image name="H" width="67" height="54"/>
+        <image name="I" width="48" height="53"/>
+        <image name="J" width="63" height="53"/>
+        <image name="K" width="62" height="53"/>
+        <image name="L" width="58" height="53"/>
+        <image name="M" width="72" height="53"/>
+        <image name="N" width="67" height="53"/>
+        <image name="O" width="67" height="53"/>
+        <image name="P" width="64" height="53"/>
+        <image name="Q" width="69" height="53"/>
+        <image name="R" width="63" height="52"/>
+        <image name="S" width="67" height="53"/>
+        <image name="T" width="65" height="54"/>
+        <image name="U" width="65" height="53"/>
+        <image name="V" width="63" height="52"/>
+        <image name="W" width="74" height="53"/>
+        <image name="X" width="64" height="53"/>
+        <image name="Y" width="68" height="53"/>
+        <image name="Z" width="67" height="54"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
