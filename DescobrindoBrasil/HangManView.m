@@ -57,11 +57,11 @@
 
     UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:1.0];
 
-    self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(100, 450, 100, 30)];
+    self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(100, 530, 100, 30)];
     [self.hangBase setBackgroundColor:blackColor];
     [self addSubview:self.hangBase];
     
-    self.hangTower = [[UIView alloc] initWithFrame:CGRectMake(140, 150, 10, 300)];
+    self.hangTower = [[UIView alloc] initWithFrame:CGRectMake(140, 150, 10, 400)];
     [self.hangTower setBackgroundColor:blackColor];
     [self addSubview:self.hangTower];
     
