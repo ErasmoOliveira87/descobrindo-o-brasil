@@ -14,6 +14,7 @@
 @interface HangViewController () <UIAlertViewDelegate>
 @property (strong, nonatomic) HangManView *hangManView;
 @property int errors;
+@property (weak, nonatomic) IBOutlet UILabel *charadaLabel;
 
 
 @end
@@ -38,9 +39,13 @@
     
     self.hangManWordLottery = [[HangManWordLottery alloc]init];
     
-    NSString *wordLottery = [self.hangManWordLottery getRandomWord];
+    [self.hangManWordLottery getRandomWord]; //sorteia palavra e charada!
+    
+    NSString *wordLottery = self.hangManWordLottery.word;
     
     [self.wordView resetWithWord:wordLottery];
+    
+    self.charadaLabel.text = self.hangManWordLottery.charade;
     
     self.keyboardView.delegate = self;
     
@@ -89,7 +94,11 @@
 -(void)reset{
     self.errors = 0;
     
-    NSString *newWordLottery = [self.hangManWordLottery getRandomWord];
+    [self.hangManWordLottery getRandomWord];
+    
+    NSString *newWordLottery = self.hangManWordLottery.word;
+    
+    self.charadaLabel.text = self.hangManWordLottery.charade;
     [self.wordView resetWithWord:newWordLottery];
     
     [self.keyboardView buttonEnable];
