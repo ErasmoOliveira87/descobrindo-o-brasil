@@ -343,6 +343,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="charadaLabel" destination="i7D-gg-E4W" id="ddm-BP-7Zg"/>
                         <outlet property="keyboardView" destination="kIx-mK-Z6f" id="gqo-Ab-gdU"/>
                         <outlet property="wordView" destination="WF4-hI-pwA" id="tez-iV-mU9"/>
                         <segue destination="BYZ-38-t0r" kind="modal" identifier="MainViewController" id="fgb-bV-3AV"/>

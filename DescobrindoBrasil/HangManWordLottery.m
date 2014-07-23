@@ -11,31 +11,57 @@
 @implementation HangManWordLottery
 
 
+- (id)init
+{
+
+    self = [super init];
+    if(self){
+     
+        self.word = [[NSString alloc]init];
+        self.charade = [[NSString alloc]init];
+    
+    
+    }
+    return self;
+}
 
 
 
--(NSString*) getRandomWord{
+-(void) getRandomWord{
     
     NSDictionary *newDicionario = [self allWord];
     
-    NSArray *arrayCategorias= @[@"Verbo",@"Adverbio"];
+  //  NSArray *arrayCategorias= @[@"Verbo"];
     
-    int randowIndexCategoria = arc4random() % [arrayCategorias count];
+   // int randowIndexCategoria = arc4random() % [arrayCategorias count];
+
+                                               
     
-    NSString *categoriaEscolha = arrayCategorias[randowIndexCategoria];
+   // NSString *categoriaEscolha = arrayCategorias[randowIndexCategoria];
     
     //escolha do array de categoria escolhida!
-    NSArray *arrayConjuntoDePalavras = [newDicionario objectForKey:categoriaEscolha];
+    NSArray *arrayConjuntoDeVerbo = [newDicionario objectForKey:@"Verbo"];
     
-    int randowIndexConjuntoDePalavras = arc4random() % [arrayConjuntoDePalavras count];
+    NSArray *arrayConjuntodeCharada = [newDicionario objectForKey:@"Charada"];
     
-    
-    NSString *wordSeleted = [arrayConjuntoDePalavras objectAtIndex:randowIndexConjuntoDePalavras];
-    
+    int randowIndexConjuntoDePalavras = arc4random() % [arrayConjuntoDeVerbo count];
     
     
     
-    return wordSeleted;
+    
+    
+    NSString *wordSeleted = [arrayConjuntoDeVerbo objectAtIndex:randowIndexConjuntoDePalavras];
+    
+    NSString *charadeSelect = [arrayConjuntodeCharada objectAtIndex:randowIndexConjuntoDePalavras];
+    
+    
+    self.word = wordSeleted;
+    
+    self.charade = charadeSelect;
+    
+    
+    
+    
 }
 
 -(NSDictionary*)allWord{
