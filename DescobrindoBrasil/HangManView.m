@@ -57,15 +57,15 @@
 
     UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:1.0];
 
-    self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(100, 450, 100, 30)];
+    self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(100, 590, 100, 30)];
     [self.hangBase setBackgroundColor:blackColor];
     [self addSubview:self.hangBase];
     
-    self.hangTower = [[UIView alloc] initWithFrame:CGRectMake(140, 150, 10, 300)];
+    self.hangTower = [[UIView alloc] initWithFrame:CGRectMake(140, 230, 10, 380)];
     [self.hangTower setBackgroundColor:blackColor];
     [self addSubview:self.hangTower];
     
-    self.hangTop = [[UIView alloc] initWithFrame:CGRectMake(140, 140, 300, 10)];
+    self.hangTop = [[UIView alloc] initWithFrame:CGRectMake(140, 230, 300, 10)];
     [self.hangTop setBackgroundColor:blackColor];
     [self addSubview:self.hangTop];
 
@@ -77,26 +77,26 @@
     int alpha = 0.0;
     UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:alpha];
     
-    self.head = [[UIView alloc] initWithFrame: CGRectMake(350, 180, 70, 70)];
+    self.head = [[UIView alloc] initWithFrame: CGRectMake(350, 280, 70, 70)];
     [self.head setBackgroundColor:blackColor];
     self.head.layer.cornerRadius = 30;
     
-    self.body = [[UIView alloc] initWithFrame: CGRectMake(380, 220, 10, 160)];
+    self.body = [[UIView alloc] initWithFrame: CGRectMake(380, 320, 10, 160)];
     [self.body setBackgroundColor:blackColor];
     
-    self.upperArm = [[UIView alloc] initWithFrame: CGRectMake(370, 270, 30, 10)];
+    self.upperArm = [[UIView alloc] initWithFrame: CGRectMake(370, 370, 30, 10)];
     [self.upperArm setBackgroundColor:blackColor];
     
-    self.rightArm = [[UIView alloc] initWithFrame: CGRectMake(360, 270, 10, 80)];
+    self.rightArm = [[UIView alloc] initWithFrame: CGRectMake(360, 370, 10, 80)];
     [self.rightArm setBackgroundColor:blackColor];
     
-    self.leftArm = [[UIView alloc] initWithFrame: CGRectMake(400, 270, 10, 80)];
+    self.leftArm = [[UIView alloc] initWithFrame: CGRectMake(400, 370, 10, 80)];
     [self.leftArm setBackgroundColor:blackColor];
     
-    self.rightLeg = [[UIView alloc] initWithFrame: CGRectMake(390, 380, 10, 100)];
+    self.rightLeg = [[UIView alloc] initWithFrame: CGRectMake(390, 480, 10, 100)];
     [self.rightLeg setBackgroundColor:blackColor];
     
-    self.leftLeg = [[UIView alloc] initWithFrame: CGRectMake(370, 380, 10, 100)];
+    self.leftLeg = [[UIView alloc] initWithFrame: CGRectMake(370, 480, 10, 100)];
     [self.leftLeg setBackgroundColor:blackColor];
     
     self.bodyParts = [[NSMutableArray alloc] initWithObjects:self.head, self.body, self.upperArm, self.leftLeg, self.leftArm, self.rightArm, self.rightLeg, nil];
