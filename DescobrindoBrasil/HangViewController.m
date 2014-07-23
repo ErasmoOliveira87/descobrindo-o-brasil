@@ -77,7 +77,7 @@
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
                                                           message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [myAlertView show];
-    [self reset];
+   // [self reset];
 }
 
 
