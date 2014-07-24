@@ -16,6 +16,7 @@
 @property int errors;
 @property (weak, nonatomic) IBOutlet UILabel *charadaLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *chanceButton;
 
 
 @end
@@ -117,6 +118,12 @@
 }
 
 
+- (IBAction)EvenChance:(id)sender {
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Você vai arricar"
+                                                          message:@"Vou arriscar" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    
+    
+}
 
 
 
