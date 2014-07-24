@@ -34,6 +34,7 @@
     
     [self.delegate didSelectChar:sender.titleLabel.text];
     
+    NSLog(@"Identifica Botão %@", sender.currentTitle);
     sender.enabled = NO;
     sender.hidden = YES;
 }
@@ -47,7 +48,7 @@
             
             UIButton *button = (UIButton *) subView;
             
-            NSLog(@"valor botao %@", button.titleLabel.text);
+        //    NSLog(@"valor botao %@", button.titleLabel.text);
             
             button.enabled = YES;
             button.hidden = NO;
