@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *charadaLabel;
 
 
+
 @end
 
 @implementation HangViewController
@@ -71,11 +72,20 @@
     }
     else if (control == 2)
     {
-       [self alert:@"VOCÊ GANHOU" :@"Muito Bom, Meus Parabéns, Continue assim" ];
+        
+       [self alert:@"VOCÊ GANHOU" : [NSString stringWithFormat:@"Muito Bom, Meus Parabéns você atingiu %d pontos",[self getPontuation]]];
     }
     
 }
 
+-(int)getPontuation {
+    if (self.errors == 0) {
+        return 100;
+    }
+    else {
+        return (100 - self.errors*10);
+    }
+}
 
 
 -(void)alert:(NSString*)title: (NSString*)subtitle{
