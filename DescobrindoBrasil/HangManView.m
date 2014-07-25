@@ -43,7 +43,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-
+        
         [self drawHang];
         [self drawHangMan];
         
@@ -54,9 +54,9 @@
 //Desenha a forca
 -(void) drawHang
 {
-
+    
     UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:1.0];
-
+    
     self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(100, 590, 100, 30)];
     [self.hangBase setBackgroundColor:blackColor];
     [self addSubview:self.hangBase];
@@ -68,7 +68,7 @@
     self.hangTop = [[UIView alloc] initWithFrame:CGRectMake(140, 230, 300, 10)];
     [self.hangTop setBackgroundColor:blackColor];
     [self addSubview:self.hangTop];
-
+    
 }
 
 //Desenha o boneco
@@ -109,7 +109,7 @@
         i++;
     }
     
-
+    
 }
 
 //Adiciona os membros no boneco
@@ -121,7 +121,7 @@
     [self.bodyParts[self.bodyCount] setBackgroundColor:blackColor];
     
     self.bodyCount++;
-
+    
     [self setNeedsDisplay];
     
 }
@@ -129,7 +129,7 @@
 //reinicia o boneco
 -(void) eraseHangMan
 {
-
+    
     self.bodyCount = 0;
     
     int alpha = 0.0;
@@ -144,7 +144,7 @@
     [self.leftLeg setBackgroundColor:blackColor];
     
     [self setNeedsDisplay];
-
+    
 }
 
 @end

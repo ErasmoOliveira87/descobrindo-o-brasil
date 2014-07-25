@@ -24,7 +24,7 @@
     
     //recebe eventos de toque do mapa
     self.brazilView.overlay.delegate = self;
-
+    
 }
 
 - (void)didReceiveMemoryWarning

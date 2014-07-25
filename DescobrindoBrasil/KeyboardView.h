@@ -21,7 +21,6 @@
 
 @property (weak, nonatomic) id<KeyboardViewDelegate> delegate;
 
-
 -(void)buttonEnable;
 
 @end
