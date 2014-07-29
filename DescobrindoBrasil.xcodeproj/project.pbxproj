@@ -30,6 +30,7 @@
 		E2341EF61973F91B0030043F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2341ED51973F91B0030043F /* UIKit.framework */; };
 		E2341EFE1973F91B0030043F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2341EFC1973F91B0030043F /* InfoPlist.strings */; };
 		E2341F001973F91B0030043F /* DescobrindoBrasilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2341EFF1973F91B0030043F /* DescobrindoBrasilTests.m */; };
+		E2F1AA3E1987D54F00D22757 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2F1AA3C1987D54F00D22757 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		E2341EFB1973F91B0030043F /* DescobrindoBrasilTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DescobrindoBrasilTests-Info.plist"; sourceTree = "<group>"; };
 		E2341EFD1973F91B0030043F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2341EFF1973F91B0030043F /* DescobrindoBrasilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DescobrindoBrasilTests.m; sourceTree = "<group>"; };
+		E2F1AA3D1987D54F00D22757 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		E2341F091973F94D0030043F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2F1AA3C1987D54F00D22757 /* Model.xcdatamodeld */,
 				6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */,
 				6FCD80F9197D544F00CA162A /* HangManWordLottery.h */,
 				6FCD80FA197D544F00CA162A /* HangManWordLottery.m */,
@@ -333,6 +336,7 @@
 				E206C92A19756A4200716112 /* WordView.m in Sources */,
 				E206C92D19756A5400716112 /* KeyboardView.m in Sources */,
 				E206C92719756A2200716112 /* BrazilView.m in Sources */,
+				E2F1AA3E1987D54F00D22757 /* Model.xcdatamodeld in Sources */,
 				E2341EDE1973F91B0030043F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +564,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2F1AA3C1987D54F00D22757 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2F1AA3D1987D54F00D22757 /* Model.xcdatamodel */,
+			);
+			currentVersion = E2F1AA3D1987D54F00D22757 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2341EC61973F91B0030043F /* Project object */;
 }
