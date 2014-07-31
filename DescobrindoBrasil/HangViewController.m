@@ -76,12 +76,12 @@
         [self.hangManView addMember];
         if (self.errors > 6) {
             
-            [self alert:@"VOCÊ ERROU!  A palavra era:":self.hangManWordLottery.word];        }
+            [self alert:@"VOCÊ ERROU!  A palavra era:"subtitle:self.hangManWordLottery.word];        }
     }
     else if (control == 2)
     {
         
-        [self alert:@"VOCÊ GANHOU" : [NSString stringWithFormat:@"Muito Bom, Meus Parabéns você atingiu %d pontos",[self getPontuation]]];
+        [self alert:@"VOCÊ GANHOU" subtitle: [NSString stringWithFormat:@"Muito Bom, Meus Parabéns você atingiu %d pontos",[self getPontuation]]];
     }
     
 }
@@ -96,7 +96,7 @@
 }
 
 
--(void)alert:(NSString*)title: (NSString*)subtitle{
+-(void)alert:(NSString*)title subtitle: (NSString*)subtitle{
     // UIAlertView *myAlertView;
     
     self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
@@ -124,12 +124,12 @@
                 //Compara a a palavra sorteada com a palavra digitada!
                 if([wordLottery isEqualToString:wordChance] ){
                     
-                    [self alert:@"VOCÊ GANHOU!  A palavra era essa mesma"  : [NSString stringWithFormat:@"Super Pontuacao: %d ",[self getPontuation] + 100]];
+                    [self alert:@"VOCÊ GANHOU!  A palavra era essa mesma"  subtitle: [NSString stringWithFormat:@"Super Pontuacao: %d ",[self getPontuation] + 100]];
                     
                     
                     
                 }else{
-                    [self alert:@"VOCÊ ERROU!  A palavra era:":wordLottery];
+                    [self alert:@"VOCÊ ERROU!  A palavra era:"subtitle:wordLottery];
                     
                     
                 }
