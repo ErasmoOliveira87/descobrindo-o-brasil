@@ -39,6 +39,17 @@
     self.word = wordSeleted;
     self.charade = charadeSelect;
     
+    
+    
+    NSString *myString = @"úlceras";
+    
+    
+    NSData *stringData = [myString dataUsingEncoding: NSASCIIStringEncoding allowLossyConversion: YES];
+    
+    NSString *cleanString = [[NSString alloc] initWithData: stringData encoding: NSASCIIStringEncoding];
+    
+    NSLog(@"palavra sem acento %@", cleanString);
+    
 }
 
 -(NSDictionary*)allWord{

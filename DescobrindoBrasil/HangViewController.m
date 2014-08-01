@@ -74,26 +74,166 @@
     
   //  character.doubleValue;
     char key='a';
-    int control=0;
+    int control=1;
     
-    NSArray *letrasAcentuadas=@[@"a",@"á",@"â",@"ã",@"e",@"é"];
+    NSArray *accentedLetters=@[@"A",@"Á",@"Â",@"Ã",@"E",@"É",@"C",@"Ç",@"I",@"Í",@"O",@"Ó",@"Ô",@"U",@"Ú",@"Û"];
+    NSArray *accentedA= @[@"A",@"Á",@"Â",@"Ã"];
+    NSArray *accentedE= @[@"E",@"É",@"Ê"];
+    NSArray *accentedI= @[@"I",@"Í"];
+    NSArray *accentedO= @[@"O",@"Ó",@"Ô"];
+    NSArray *accentedU= @[@"U",@"Ú",@"Û"];
+    NSArray *accentedC= @[@"C",@"Ç"];
     
-    if(([character isEqualToString:@"A"])||([character isEqualToString:@"B"])||([character isEqualToString:@"C"])||([character isEqualToString:@"D"])||([character isEqualToString:@"E"])||([character isEqualToString:@"C"])){
+    
+    if([character isEqualToString:@"A"]){
+    
+         for(int lettersCount=0;lettersCount<[accentedA count];lettersCount++){
+             
+             key = [accentedA[lettersCount] characterAtIndex:0];
+             
+             
+             
+             NSLog(@"valor da variavel(A: %c", key);
+             
+             control = [self.wordView selectChar:key];
+    
+    }
         
-        
-        
-        
-      NSLog(@"valor da variavel %i", character.length);
+    }//fim do if de A
+    if ([character isEqualToString:@"E"]) {
+        for(int lettersCount=0;lettersCount<[accentedE count];lettersCount++){
+            
+            key = [accentedE[lettersCount] characterAtIndex:0];
+            
+            
+            
+            NSLog(@"valor da variavel(E): %c", key);
+            
+            control = [self.wordView selectChar:key];
+            
+        }
+    }//fim do if de E
+    
+    if ([character isEqualToString:@"I"]) {
+        for(int lettersCount=0;lettersCount<[accentedI count];lettersCount++){
+            
+            key = [accentedI[lettersCount] characterAtIndex:0];
+            
+            
+            
+            NSLog(@"valor da variavel(I: %c", key);
+            
+            control = [self.wordView selectChar:key];
+            
+        }
+    }//fim do if de I
+    
+    if ([character isEqualToString:@"O"]) {
+        for(int lettersCount=0;lettersCount<[accentedO count];lettersCount++){
+            
+            key = [accentedO[lettersCount] characterAtIndex:0];
+            
+            
+            
+            NSLog(@"valor da variavel(O): %c", key);
+            
+            control = [self.wordView selectChar:key];
+            
+        }
+    }//fim do if de O
+    
+    if ([character isEqualToString:@"U"]) {
+        for(int lettersCount=0;lettersCount<[accentedU count];lettersCount++){
+            
+            key = [accentedU[lettersCount] characterAtIndex:0];
+            
+            
+            
+            NSLog(@"valor da variavel(U): %c", key);
+            
+            control = [self.wordView selectChar:key];
+            
+        }
+    }//fim do if de U
+    
+    
+    if ([character isEqualToString:@"C"]) {
+        for(int lettersCount=0;lettersCount<[accentedC count];lettersCount++){
+            
+            key = [accentedC[lettersCount] characterAtIndex:0];
+            
+            
+            
+            NSLog(@"valor da variavel(C): %c", key);
+            
+            control = [self.wordView selectChar:key];
+            
+        }
     }else{
     
+    key = [character characterAtIndex:0];
+    
+    
+    
+    NSLog(@"valor da variavel sem vogais ou C: %c", key);
+    
+    control = [self.wordView selectChar:key];
+    
+    NSLog(@"valor do CONTROL: %i", control);
+    
+    
+    
+}
+/*
+    if(([character isEqualToString:@"A"])||([character isEqualToString:@"B"])||([character isEqualToString:@"C"])||([character isEqualToString:@"D"])||([character isEqualToString:@"E"])||([character isEqualToString:@"C"])){
+        
+        for(int lettersCount=0;lettersCount<[accentedLetters count];lettersCount++){
+        
+            
+            
+            key = [accentedLetters[lettersCount] characterAtIndex:0];
+            
+            
+            
+            NSLog(@"valor da variavel(A,B,C,D,E,C): %c", key);
+            
+            control = [self.wordView selectChar:key];
+            
+            NSLog(@"valor do CONTROL: %i", control);
+        
+            
+           // if((control==1)||(control==2)){
+            
+            //    lettersCount = [accentedLetters count];
+                
+            //    NSLog(@"Quando control é 1 ou 2, Valor da variavel: %c", key);
+
+           // }
+            
+        }
+        
+        
+        
+     // NSLog(@"valor da variavel %i", character.length);
+    }else{
+    
+        key = [character characterAtIndex:0];
+        
+        
+        
+        NSLog(@"valor da variavel sem vogais ou C: %c", key);
+        
+        control = [self.wordView selectChar:key];
+        
+        NSLog(@"valor do CONTROL: %i", control);
     
     
     
     }
+    */
     
-    
-     key = [character characterAtIndex:0];
-     control = [self.wordView selectChar:key];
+    // key = [character characterAtIndex:0];
+    // control = [self.wordView selectChar:key];
     if(control ==0){
         self.errors++;
         [self.hangManView addMember];
