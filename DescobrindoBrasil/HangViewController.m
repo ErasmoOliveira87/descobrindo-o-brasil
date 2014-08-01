@@ -9,22 +9,23 @@
 #import "HangViewController.h"
 #import "HangManView.h"
 #import "HangManWordLottery.h"
+#import "ScoreViewController.h"
+#import "Score.h"
 
 
 @interface HangViewController () <UIAlertViewDelegate>
 @property (strong, nonatomic) HangManView *hangManView;
 @property int errors;
 @property (weak, nonatomic) IBOutlet UILabel *charadaLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *chanceButton;
-
 @property(strong,nonatomic) UIAlertView *alertView;
-
 @property(strong,nonatomic) UIAlertView *alertViewMensagem;
-
 @property(weak,nonatomic)NSString *valueButtonChancer;
+@property (nonatomic, strong) Score * score;
+@property (nonatomic,strong) NSString * state;
+@property int pontuation;
 
-@property(nonatomic)int confirma;
+
 
 
 @end
@@ -43,20 +44,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.score = [[Score alloc]init];
+    self.state = @"SP";                                                               // estático
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
     [self.view addSubview:self.hangManView];
-    
     self.hangManWordLottery = [[HangManWordLottery alloc]init];
-    
     [self.hangManWordLottery getRandomWord]; //sorteia palavra e charada!
-    
     NSString *wordLottery = self.hangManWordLottery.word;
-    
     [self.wordView resetWithWord:wordLottery];
-    
     self.charadaLabel.text = self.hangManWordLottery.charade;
-    
     self.keyboardView.delegate = self;
     
     // Do any additional setup after loading the view.
@@ -75,13 +71,32 @@
         self.errors++;
         [self.hangManView addMember];
         if (self.errors > 6) {
-            
-            [self alert:@"VOCÊ ERROU!  A palavra era:"subtitle:self.hangManWordLottery.word];        }
+            self.pontuation = 0;
+            [self performSegueWithIdentifier:@"score" sender:self];
+        }
     }
     else if (control == 2)
     {
+        self.pontuation = [self getPontuation];
+        [self.score replaceScorePoints:self.pontuation inState:self.state];
+        [self performSegueWithIdentifier:@"score" sender:self];
         
-        [self alert:@"VOCÊ GANHOU" subtitle: [NSString stringWithFormat:@"Muito Bom, Meus Parabéns você atingiu %d pontos",[self getPontuation]]];
+    }
+    
+}
+
+-(int)stars
+{
+    if (self.pontuation >150) {
+        return 3;
+    }
+    else if (self.pontuation >=100)
+        return 2;
+    else if (self.pontuation >=40)
+        return 1;
+    else
+    {
+        return 0;
     }
     
 }
@@ -94,17 +109,6 @@
         return (100 - self.errors*10);
     }
 }
-
-
--(void)alert:(NSString*)title subtitle: (NSString*)subtitle{
-    // UIAlertView *myAlertView;
-    
-    self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
-                                                        message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [self.alertViewMensagem show];
-    // [self reset];
-}
-
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -124,12 +128,17 @@
                 //Compara a a palavra sorteada com a palavra digitada!
                 if([wordLottery isEqualToString:wordChance] ){
                     
-                    [self alert:@"VOCÊ GANHOU!  A palavra era essa mesma"  subtitle: [NSString stringWithFormat:@"Super Pontuacao: %d ",[self getPontuation] + 100]];
+                    self.pontuation = ([self getPontuation]+100);
+                    [self.score replaceScorePoints: self.pontuation inState:self.state];
+                    [self performSegueWithIdentifier:@"score" sender:self];
                     
                     
                     
-                }else{
-                    [self alert:@"VOCÊ ERROU!  A palavra era:"subtitle:wordLottery];
+                    
+                    
+                }
+                else{
+                    [self performSegueWithIdentifier:@"score" sender:self];
                     
                     
                 }
@@ -146,6 +155,16 @@
         
     }
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"score"]) {
+        ScoreViewController * scoreViewController = [segue destinationViewController];
+        scoreViewController.score = self.pontuation;
+        scoreViewController.stars = [self stars];
+        
+    }
 }
 
 -(void)reset{

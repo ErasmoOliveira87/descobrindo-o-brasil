@@ -12,4 +12,9 @@
 
 @property (nonatomic, strong) NSMutableDictionary * points;
 
+-(int)starsForState: (NSString*)state;
+
+-(void)replaceScorePoints:(int)scorePoints inState:(NSString *)state;
+
+
 @end

@@ -10,4 +10,7 @@
 
 @interface ScoreViewController : UIViewController
 
+@property int stars;
+@property int score;
+
 @end
