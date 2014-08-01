@@ -27,6 +27,8 @@
 @property(nonatomic)int confirma;
 
 
+
+
 @end
 
 @implementation HangViewController
@@ -69,8 +71,29 @@
 }
 
 -(void)didSelectChar:(NSString *)character {
-    char key = [character characterAtIndex:0];
-    int control = [self.wordView selectChar:key];
+    
+  //  character.doubleValue;
+    char key='a';
+    int control=0;
+    
+    NSArray *letrasAcentuadas=@[@"a",@"á",@"â",@"ã",@"e",@"é"];
+    
+    if(([character isEqualToString:@"A"])||([character isEqualToString:@"B"])||([character isEqualToString:@"C"])||([character isEqualToString:@"D"])||([character isEqualToString:@"E"])||([character isEqualToString:@"C"])){
+        
+        
+        
+        
+      NSLog(@"valor da variavel %i", character.length);
+    }else{
+    
+    
+    
+    
+    }
+    
+    
+     key = [character characterAtIndex:0];
+     control = [self.wordView selectChar:key];
     if(control ==0){
         self.errors++;
         [self.hangManView addMember];
