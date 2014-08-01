@@ -16,7 +16,6 @@
 
 
 -(void)getRandomWord;
-
 -(NSDictionary*)allWord;
 
 @end

@@ -45,7 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
     [self.view addSubview:self.hangManView];
     
@@ -99,13 +99,12 @@
         [self.hangManView addMember];
         if (self.errors > 6) {
             
-            [self alert:@"VOCÊ PERDEU" :@"Que pena, não foi dessa vez" ];
-        }
+            [self alert:@"VOCÊ ERROU!  A palavra era:"subtitle:self.hangManWordLottery.word];        }
     }
     else if (control == 2)
     {
         
-       [self alert:@"VOCÊ GANHOU" : [NSString stringWithFormat:@"Muito Bom, Meus Parabéns você atingiu %d pontos",[self getPontuation]]];
+        [self alert:@"VOCÊ GANHOU" subtitle: [NSString stringWithFormat:@"Muito Bom, Meus Parabéns você atingiu %d pontos",[self getPontuation]]];
     }
     
 }
@@ -120,13 +119,13 @@
 }
 
 
--(void)alert:(NSString*)title: (NSString*)subtitle{
-   // UIAlertView *myAlertView;
+-(void)alert:(NSString*)title subtitle: (NSString*)subtitle{
+    // UIAlertView *myAlertView;
     
-self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
-                                                          message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
+                                                        message:subtitle delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [self.alertViewMensagem show];
-   // [self reset];
+    // [self reset];
 }
 
 
@@ -138,7 +137,7 @@ self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
         
         NSString *wordLottery = self.hangManWordLottery.word;
         NSString *wordChance = [[[self.alertView textFieldAtIndex:0] text] uppercaseString];
-
+        
         
         switch (buttonIndex) {
             case 0:
@@ -148,26 +147,26 @@ self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
                 //Compara a a palavra sorteada com a palavra digitada!
                 if([wordLottery isEqualToString:wordChance] ){
                     
-                    [self alert:@"VOCÊ GANHOU!  A palavra era essa mesma"  : [NSString stringWithFormat:@"Super Pontuacao: %d ",[self getPontuation] + 1000]];
+                    [self alert:@"VOCÊ GANHOU!  A palavra era essa mesma"  subtitle: [NSString stringWithFormat:@"Super Pontuacao: %d ",[self getPontuation] + 100]];
                     
-                    NSLog(@"GANHOU:! ");
+                    
                     
                 }else{
-                    [self alert:@"VOCÊ ERROU!  A palavra era:":wordLottery];
+                    [self alert:@"VOCÊ ERROU!  A palavra era:"subtitle:wordLottery];
                     
-                    NSLog(@"ERROU:! ");
+                    
                 }
                 break;
             default:
                 
                 break;
         }
-
-    //alertView: Parabens você ganhou
+        
+        //alertView: Parabens você ganhou
     }else if(alertView == self.alertViewMensagem){
-    
+        
         [self reset];
-    
+        
     }
     
 }
@@ -188,9 +187,9 @@ self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
 }
 
 
-- (IBAction)EvenChance:(UIButton *)sender {
-    /*UIAlertView *myAlertView2*/; self.alertView = [[UIAlertView alloc] initWithTitle:@"Você vai arriscar?"
-                                                          message:@"Boa Sorte!" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
+- (IBAction)evenChance:(UIButton *)sender {
+    self.alertView = [[UIAlertView alloc] initWithTitle:@"Você vai arriscar?"
+                                                message:@"Boa Sorte!" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
     
     self.alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     
@@ -199,48 +198,6 @@ self.alertViewMensagem = [[UIAlertView alloc] initWithTitle:title
     [self.alertView show];
     
     
-    /*
-    NSLog(@"Botão valor: %@", self.valueButtonChancer);
-    
-    
-   
-        
-        NSLog(@"QUE PALAVRA DIGITADA: %@",[[self.alertView textFieldAtIndex:0] text]);
-        
-        NSString *wordLottery = self.hangManWordLottery.word;
-        NSString *wordChance = [[[self.alertView textFieldAtIndex:0] text] uppercaseString];
-    if(self.confirma==1){
-        
-        
-        //Compara a a palavra sorteada com a palavra digitada!
-        if([wordLottery isEqualToString:wordChance] ){
-            
-               [self alert:@"VOCÊ GANHOU!  A palavra era essa mesma"  : wordLottery];
-            
-            NSLog(@"GANHOU:! ");
-            
-            
-            
-         //   [self reset];
-            
-        }else{
-            [self alert:@"VOCÊ ERROU!  A palavra era:":wordLottery];
-            
-            
-            NSLog(@"ERROU:! ");
-           // [self reset];
-        }
-        
-        self.confirma=0;
-    }
-    
-        
-        NSLog(@"wordLoterry:! %@", wordLottery);
-        NSLog(@"wordChance! %@", wordChance);
-    
-    
-    
-    */
 }
 
 
