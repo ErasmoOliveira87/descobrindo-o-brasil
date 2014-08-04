@@ -16,5 +16,7 @@
 
 -(void)replaceScorePoints:(int)scorePoints inState:(NSString *)state;
 
+-(int)pointsForState: (NSString*)state;
+
 
 @end
