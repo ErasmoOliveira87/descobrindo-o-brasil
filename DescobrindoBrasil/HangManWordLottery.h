@@ -13,9 +13,11 @@
 
 @property(strong,nonatomic)NSString *word;
 @property(strong,nonatomic)NSString *charade;
+@property(strong,nonatomic)NSString *wordWithoutAccent;
 
 
 -(void)getRandomWord;
+-(void)getWordWithouAccent:(NSString *)WordWithAccent;
 -(NSDictionary*)allWord;
 
 @end

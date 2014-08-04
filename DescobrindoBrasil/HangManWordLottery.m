@@ -19,6 +19,7 @@
         
         self.word = [[NSString alloc]init];
         self.charade = [[NSString alloc]init];
+        self.wordWithoutAccent = [[NSString alloc]init];
         
         
     }
@@ -42,15 +43,39 @@
     
     
     NSString *myString = @"úlceras";
+  //  NSString *sub=[myString substringWithRange:NSMakeRange(0, 1)];
     
+   // NSString *needle = [myString componentsSeparatedByString:@":"][1];
     
-    NSData *stringData = [myString dataUsingEncoding: NSASCIIStringEncoding allowLossyConversion: YES];
+  //  NSString *mySmallerString = [myString substringToIndex:4];
     
-    NSString *cleanString = [[NSString alloc] initWithData: stringData encoding: NSASCIIStringEncoding];
+ //   NSLog(@"A SUBSTRING É %@", sub);
     
-    NSLog(@"palavra sem acento %@", cleanString);
+  //  [self getWordWithouAccent:@"Áçêntúàção"];
+   
+    [self getWordWithouAccent:self.word];
+    
+   // NSLog(@"palavra sem acento %@", cleanString);
     
 }
+
+
+-(void)getWordWithouAccent:(NSString *)WordWithAccent{
+
+
+ //   NSData *stringData = [WordWithAccent dataUsingEncoding: NSASCIIStringEncoding allowLossyConversion: YES];
+    
+ //   self.wordWithoutAccent = [[WordWithAccent stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]] uppercaseString];
+    
+    self.wordWithoutAccent = [WordWithAccent stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
+    
+  //  NSLog(@"sem acento! %@", self.wordWithoutAccent);
+    
+ //   self.wordWithoutAccent = [[NSString alloc] initWithData: stringData encoding: NSASCIIStringEncoding];
+
+
+}
+
 
 -(NSDictionary*)allWord{
     
