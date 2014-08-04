@@ -35,6 +35,12 @@
 
 @property (nonatomic) int bodyCount;
 
+@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIGravityBehavior *gravity;
+@property (strong, nonatomic) UICollisionBehavior *collision;
+@property (strong, nonatomic) UIDynamicItemBehavior *itemBehaviour;
+@property (strong, nonatomic) UIAttachmentBehavior *attachment;
+
 @end
 
 @implementation HangManView
@@ -43,9 +49,64 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+
         [self drawHang];
         [self drawHangMan];
+        
+        self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
+        self.gravity = [[UIGravityBehavior alloc] initWithItems:@[self.leftLeg, self.leftArm, self.rightArm, self.rightLeg]];
+        
+        self.gravity.gravityDirection = CGVectorMake(0.0, 0.9);
+        
+        self.itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:@[self.leftLeg, self.leftArm, self.rightArm, self.rightLeg]];
+        self.itemBehaviour.elasticity = 1.0;
+        self.itemBehaviour.friction = 1.0;
+        self.itemBehaviour.density = 1.0;
+        self.itemBehaviour.allowsRotation = NO;
+        [self.animator addBehavior:self.itemBehaviour];
+        
+        float damping = 10.0;
+        float frequency = 10.0;
+        
+        UIAttachmentBehavior * attachHeadToPoint = [[UIAttachmentBehavior alloc] initWithItem:self.head attachedToAnchor:CGPointMake(self.center.x, self.center.y)];
+        attachHeadToPoint.damping = damping;
+        attachHeadToPoint.frequency = frequency;
+        
+        UIAttachmentBehavior * attachBodyToHead = [[UIAttachmentBehavior alloc] initWithItem:self.body attachedToAnchor:CGPointMake(self.center.x, self.center.y)];
+        attachBodyToHead.damping = damping;
+        attachBodyToHead.frequency = frequency;
+        
+        UIAttachmentBehavior * attachShoulderToBody = [[UIAttachmentBehavior alloc] initWithItem:self.upperArm attachedToAnchor:CGPointMake(self.center.x, self.center.y)];
+        attachShoulderToBody.damping = damping;
+        attachShoulderToBody.frequency = frequency;
+        
+        UIAttachmentBehavior * attachLeftArmToShoulders = [[UIAttachmentBehavior alloc] initWithItem:self.leftArm attachedToAnchor:CGPointMake(self.center.x, self.center.y)];
+        attachLeftArmToShoulders.damping = damping;
+        attachLeftArmToShoulders.frequency = frequency;
+        
+        UIAttachmentBehavior * attachRightArmToBody = [[UIAttachmentBehavior alloc] initWithItem:self.rightArm attachedToAnchor:CGPointMake(self.center.x, self.center.y)];
+        attachRightArmToBody.damping = damping;
+        attachRightArmToBody.frequency = frequency;
+        
+        UIAttachmentBehavior * attachRightLegToBody = [[UIAttachmentBehavior alloc] initWithItem:self.rightLeg attachedToAnchor:CGPointMake(self.center.x, self.center.y)];
+        attachRightLegToBody.damping = damping;
+        attachRightLegToBody.frequency = frequency;
+        
+        UIAttachmentBehavior * attachLeftLegToBody = [[UIAttachmentBehavior alloc] initWithItem:self.leftLeg attachedToAnchor:CGPointMake(self.center.x, self.center.y)];
+        attachLeftLegToBody.damping = damping;
+        attachLeftLegToBody.frequency = frequency;
+        
+        [self.animator addBehavior:attachHeadToPoint];
+        [self.animator addBehavior:attachBodyToHead];
+        [self.animator addBehavior:attachShoulderToBody];
+        [self.animator addBehavior:attachLeftArmToShoulders];
+        [self.animator addBehavior:attachRightArmToBody];
+        [self.animator addBehavior:attachRightLegToBody];
+        [self.animator addBehavior:attachLeftLegToBody];
+        
+        [self.animator addBehavior:self.gravity];
+        
+        [self setNeedsDisplay];
         
     }
     return self;
@@ -55,18 +116,16 @@
 -(void) drawHang
 {
     
-    UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:1.0];
-    
-    self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(100, 590, 100, 30)];
-    [self.hangBase setBackgroundColor:blackColor];
+    self.hangBase = [[UIView alloc] initWithFrame:CGRectMake(200, 570, 87, 44)];
+    [self.hangBase setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"hangBase"]]];
     [self addSubview:self.hangBase];
     
-    self.hangTower = [[UIView alloc] initWithFrame:CGRectMake(140, 230, 10, 380)];
-    [self.hangTower setBackgroundColor:blackColor];
+    self.hangTower = [[UIView alloc] initWithFrame:CGRectMake(240, 251, 21, 320)];
+    [self.hangTower setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"hangTower"]]];
     [self addSubview:self.hangTower];
     
-    self.hangTop = [[UIView alloc] initWithFrame:CGRectMake(140, 230, 300, 10)];
-    [self.hangTop setBackgroundColor:blackColor];
+    self.hangTop = [[UIView alloc] initWithFrame:CGRectMake(240, 230, 205, 21)];
+    [self.hangTop setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"hangTop"]]];
     [self addSubview:self.hangTop];
     
 }
@@ -93,10 +152,10 @@
     self.leftArm = [[UIView alloc] initWithFrame: CGRectMake(400, 370, 10, 80)];
     [self.leftArm setBackgroundColor:blackColor];
     
-    self.rightLeg = [[UIView alloc] initWithFrame: CGRectMake(390, 480, 10, 100)];
+    self.rightLeg = [[UIView alloc] initWithFrame: CGRectMake(370, 470, 10, 100)];
     [self.rightLeg setBackgroundColor:blackColor];
     
-    self.leftLeg = [[UIView alloc] initWithFrame: CGRectMake(370, 480, 10, 100)];
+    self.leftLeg = [[UIView alloc] initWithFrame: CGRectMake(390, 470, 10, 100)];
     [self.leftLeg setBackgroundColor:blackColor];
     
     self.bodyParts = [[NSMutableArray alloc] initWithObjects:self.head, self.body, self.upperArm, self.leftLeg, self.leftArm, self.rightArm, self.rightLeg, nil];
@@ -109,6 +168,8 @@
         i++;
     }
     
+    
+    [self setNeedsDisplay];
     
 }
 
@@ -133,15 +194,15 @@
     self.bodyCount = 0;
     
     int alpha = 0.0;
-    UIColor *blackColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:alpha];
+    UIColor *transparentColor = [[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:alpha];
     
-    [self.head setBackgroundColor:blackColor];
-    [self.body setBackgroundColor:blackColor];
-    [self.upperArm setBackgroundColor:blackColor];
-    [self.rightArm setBackgroundColor:blackColor];
-    [self.leftArm setBackgroundColor:blackColor];
-    [self.rightLeg setBackgroundColor:blackColor];
-    [self.leftLeg setBackgroundColor:blackColor];
+    [self.head setBackgroundColor:transparentColor];
+    [self.body setBackgroundColor:transparentColor];
+    [self.upperArm setBackgroundColor:transparentColor];
+    [self.rightArm setBackgroundColor:transparentColor];
+    [self.leftArm setBackgroundColor:transparentColor];
+    [self.rightLeg setBackgroundColor:transparentColor];
+    [self.leftLeg setBackgroundColor:transparentColor];
     
     [self setNeedsDisplay];
     
