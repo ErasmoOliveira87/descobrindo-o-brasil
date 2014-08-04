@@ -90,7 +90,7 @@
     if (self.pontuation >150) {
         return 3;
     }
-    else if (self.pontuation >=100)
+    else if (self.pontuation >=90)
         return 2;
     else if (self.pontuation >=40)
         return 1;
