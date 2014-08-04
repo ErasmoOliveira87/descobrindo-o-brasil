@@ -42,14 +42,12 @@
 -(void)initialize {
     
     UIImage *brazilMap = [UIImage imageNamed:@"brazil_blank_map"];
-    UIImageView *mapImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    mapImageView.image = brazilMap;
+    UIImageView *mapImageView = [[UIImageView alloc] initWithImage:brazilMap];
     
     //adiciona a imagem do mapa com o overlay ao mapContainerView
     _mapContainerView = [[UIView alloc] initWithFrame:mapImageView.frame];
     
     [_mapContainerView addSubview:mapImageView];
-    
     
     MapOverlay *overlay = [[MapOverlay alloc] initWithFrame:mapImageView.frame];
     _overlay = overlay;
@@ -65,6 +63,8 @@
     //configura zoom
     self.delegate = self;
     self.maximumZoomScale = 2.0;
+    self.minimumZoomScale = 0.75;
+    self.zoomScale = 0.75;
 }
 
 #pragma mark UIScrollView Delegate

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *avanceButton;
 @property (weak, nonatomic) IBOutlet UIButton *playAgainButton;
 
+
 @end
 
 @implementation ScoreViewController
@@ -34,10 +35,41 @@
 {
     [super viewDidLoad];
     
-    [self.scoreView.firstStar setImage:[UIImage imageNamed:@"starWin"]];
-    [self.scoreView.secondStar setImage:[UIImage imageNamed:@"starLose"]];
-    [self.scoreView.thirdStar setImage:[UIImage imageNamed:@"starWin"]];
+
     // Do any additional setup after loading the view.
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.stars == 0) {
+        self.titleLabel.text = @"Você Perdeu!";
+        [self.scoreView.firstStar setImage:[UIImage imageNamed:@"starLose"]];
+        [self.scoreView.secondStar setImage:[UIImage imageNamed:@"starLose"]];
+        [self.scoreView.thirdStar setImage:[UIImage imageNamed:@"starLose"]];
+        self.avanceButton.enabled = false;
+        
+    }
+    else{
+         self.titleLabel.text = @"Parabéns!";
+        if (self.stars == 1) {
+                  self.avanceButton.enabled = true;
+            [self.scoreView.firstStar setImage:[UIImage imageNamed:@"starWin"]];
+            [self.scoreView.secondStar setImage:[UIImage imageNamed:@"starLose"]];
+            [self.scoreView.thirdStar setImage:[UIImage imageNamed:@"starLose"]];
+        }
+        else if (self.stars == 2){
+            [self.scoreView.firstStar setImage:[UIImage imageNamed:@"starWin"]];
+            [self.scoreView.secondStar setImage:[UIImage imageNamed:@"starWin"]];
+            [self.scoreView.thirdStar setImage:[UIImage imageNamed:@"starLose"]];
+        }
+        else{
+            [self.scoreView.firstStar setImage:[UIImage imageNamed:@"starWin"]];
+            [self.scoreView.secondStar setImage:[UIImage imageNamed:@"starWin"]];
+            [self.scoreView.thirdStar setImage:[UIImage imageNamed:@"starWin"]];
+        }
+    }
+self.pointsLabel.text = [NSString stringWithFormat:@"%d pontos",self.score];
 }
 
 - (void)didReceiveMemoryWarning

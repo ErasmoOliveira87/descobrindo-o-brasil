@@ -12,8 +12,6 @@
 
 -(void)didSelectChar:(NSString*)character;
 
--(void)resetButton;
-
 @end
 
 
