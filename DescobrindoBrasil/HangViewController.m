@@ -25,6 +25,7 @@
 @property (nonatomic,strong) NSString * state;
 @property int pontuation;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 
 
 
@@ -230,6 +231,11 @@
     
 }
 
+- (IBAction)btnBackClick:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 
 
