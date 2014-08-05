@@ -16,7 +16,7 @@
 @interface HangViewController () <UIAlertViewDelegate>
 @property (strong, nonatomic) HangManView *hangManView;
 @property int errors;
-@property (weak, nonatomic) IBOutlet UILabel *charadaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *askLabel;
 @property (weak, nonatomic) IBOutlet UIButton *chanceButton;
 @property(strong,nonatomic) UIAlertView *alertView;
 @property(strong,nonatomic) UIAlertView *alertViewMensagem;
@@ -63,7 +63,7 @@
     [self.wordView resetWithWord:wordWithoutAccent]; //Não tem acentuação essa palavra.
     [self.wordView wordWithAccent:wordLottery]; //Essa palavra sorteada tem acentuação.
     
-    self.charadaLabel.text = self.hangManWordLottery.charade;
+    self.askLabel.text = self.hangManWordLottery.charade;
     self.keyboardView.delegate = self;
     
     // Do any additional setup after loading the view.
@@ -208,7 +208,7 @@
     NSString *newWordLottery = self.hangManWordLottery.word;
     NSString *newWordWithoutAccent = self.hangManWordLottery.wordWithoutAccent;
     
-    self.charadaLabel.text = self.hangManWordLottery.charade;
+    self.askLabel.text = self.hangManWordLottery.charade;
     [self.wordView resetWithWord:newWordWithoutAccent];
     [self.wordView wordWithAccent:newWordLottery];
     

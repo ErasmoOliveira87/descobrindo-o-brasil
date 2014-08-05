@@ -17,6 +17,8 @@
         for (int c = 0; c< 27; c++) {
             self.data[[estates objectAtIndex:c]] = [[NSMutableArray alloc]init];
         }
+        
+        [self addAsk:@"Capital do Estado" forAnswer:@"São Paulo" inState:@"SP"];
     }
     return self;
 }
@@ -26,6 +28,15 @@
     NSDictionary * question = [NSDictionary dictionaryWithObject:ask forKey:answer];
     [[self.data objectForKey:state]addObject:question];
 }
+
+
+-(NSDictionary*) sortAskFor: (NSString*)state{
+    NSMutableArray * stateArray = [self.data objectForKey:state];
+    int randonIndex = arc4random() % [stateArray count];
+    NSDictionary* dictionary =  [stateArray objectAtIndex:randonIndex];
+    return dictionary;
+}
+
 
 
 
