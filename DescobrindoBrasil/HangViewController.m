@@ -8,7 +8,6 @@
 
 #import "HangViewController.h"
 #import "HangManView.h"
-#import "HangManWordLottery.h"
 #import "ScoreViewController.h"
 #import "Score.h"
 
@@ -16,13 +15,15 @@
 @interface HangViewController () <UIAlertViewDelegate>
 @property (strong, nonatomic) HangManView *hangManView;
 @property int errors;
-@property (weak, nonatomic) IBOutlet UILabel *charadaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *askLabel;
 @property (weak, nonatomic) IBOutlet UIButton *chanceButton;
 @property(strong,nonatomic) UIAlertView *alertView;
 @property(strong,nonatomic) UIAlertView *alertViewMensagem;
 @property(weak,nonatomic)NSString *valueButtonChancer;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic,strong) NSString * state;
+@property (nonatomic, strong) NSString * sortedWord;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 @property int pontuation;
 
 
@@ -49,19 +50,10 @@
     self.state = @"SP";                                                               // estático
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
     [self.view addSubview:self.hangManView];
-    self.hangManWordLottery = [[HangManWordLottery alloc]init];
-    [self.hangManWordLottery getRandomWord]; //sorteia palavra e charada!
+    self.hangManData = [[HangmanData alloc]init];
+
+    [self reset];
     
-   
-    
-    NSString *wordLottery = self.hangManWordLottery.word;
-    
-    NSString *wordWithoutAccent = self.hangManWordLottery.wordWithoutAccent;
-    
-    [self.wordView resetWithWord:wordWithoutAccent]; //Não tem acentuação essa palavra.
-    [self.wordView wordWithAccent:wordLottery]; //Essa palavra sorteada tem acentuação.
-    
-    self.charadaLabel.text = self.hangManWordLottery.charade;
     self.keyboardView.delegate = self;
     
     // Do any additional setup after loading the view.
@@ -75,27 +67,8 @@
 
 -(void)didSelectChar:(NSString *)character {
     
-  //  character.doubleValue;
-    char key='a';
     int control=1;
-    
-  //  NSArray *accentedLetters=@[@"A",@"Á",@"Â",@"Ã",@"E",@"É",@"C",@"Ç",@"I",@"Í",@"O",@"Ó",@"Ô",@"U",@"Ú",@"Û"];
-  //  NSArray *accentedA= @[@"A",@"Á",@"Â",@"Ã"];
-  //  NSArray *accentedE= @[@"E",@"É",@"Ê"];
-  //  NSArray *accentedI= @[@"I",@"Í"];
-  //  NSArray *accentedO= @[@"O",@"Ó",@"Ô"];
-  //  NSArray *accentedU= @[@"U",@"Ú",@"Û"];
-  //  NSArray *accentedC= @[@"C",@"Ç"];
-    
-    
-  //  NSString *newString=@"A
-    
-    key = [character characterAtIndex:0];
-    
-    
-    
-    NSLog(@"valor da variavel sem vogais ou C: %c", key);
-    
+    char key = [character characterAtIndex:0];
     control = [self.wordView selectChar:key];
 
     if(control ==0){
@@ -146,8 +119,7 @@
     
     //alertView: Chutar
     if(alertView == self.alertView){
-        
-        NSString *wordLottery = self.hangManWordLottery.word;
+
         NSString *wordChance = [[[self.alertView textFieldAtIndex:0] text] uppercaseString];
         
         
@@ -157,7 +129,7 @@
                 break;
             case 1:
                 //Compara a a palavra sorteada com a palavra digitada!
-                if([wordLottery isEqualToString:wordChance] ){
+                if([self.sortedWord isEqualToString:wordChance] ){
                     
                     self.pontuation = ([self getPontuation]+100);
                     [self.score replaceScorePoints: self.pontuation inState:self.state];
@@ -200,18 +172,12 @@
 
 -(void)reset{
     self.errors = 0;
-    
-    [self.hangManWordLottery getRandomWord];
-    
-    NSString *newWordLottery = self.hangManWordLottery.word;
-    NSString *newWordWithoutAccent = self.hangManWordLottery.wordWithoutAccent;
-    
-    self.charadaLabel.text = self.hangManWordLottery.charade;
-    [self.wordView resetWithWord:newWordWithoutAccent];
-    [self.wordView wordWithAccent:newWordLottery];
-    
+    [self.hangManData sortAskFor:self.state];
+    NSDictionary * askDictionary = [[NSDictionary alloc]initWithDictionary:[self.hangManData sortAskFor:self.state]];
+    self.sortedWord = [[askDictionary allKeys]objectAtIndex:0];
+    self.askLabel.text = [askDictionary objectForKey:self.sortedWord];
+    [self.wordView resetWithWord:self.sortedWord];
     [self.keyboardView buttonEnable];
-    
     [self.hangManView eraseHangMan];
 }
 
@@ -229,6 +195,11 @@
     
 }
 
+- (IBAction)btnBackClick:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 
 

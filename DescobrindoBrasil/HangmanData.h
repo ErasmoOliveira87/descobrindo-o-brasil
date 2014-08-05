@@ -11,5 +11,6 @@
 @interface HangmanData : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary * data;
+-(NSDictionary*) sortAskFor: (NSString*)state;
 
 @end

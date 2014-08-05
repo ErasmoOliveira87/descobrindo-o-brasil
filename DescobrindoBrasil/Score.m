@@ -45,4 +45,11 @@
 }
 
 
+-(int)pointsForState: (NSString*)state
+{
+    return [[self.points objectForKey:state] intValue];
+}
+
+
+
 @end
