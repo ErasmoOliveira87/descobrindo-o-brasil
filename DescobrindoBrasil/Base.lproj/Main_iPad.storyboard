@@ -369,7 +369,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="askLabel" destination="i7D-gg-E4W" id="bd9-yS-qqz"/>
-                        <outlet property="btnBack" destination="AUA-1i-5mB" id="Den-wF-C2G"/>
+                        <outlet property="btnBack" destination="AUA-1i-5mB" id="SW8-4Q-MHK"/>
                         <outlet property="chanceButton" destination="cO0-NW-Jqi" id="Llb-Ha-fBU"/>
                         <outlet property="keyboardView" destination="kIx-mK-Z6f" id="gqo-Ab-gdU"/>
                         <outlet property="wordView" destination="WF4-hI-pwA" id="tez-iV-mU9"/>

@@ -23,6 +23,7 @@
 @property (nonatomic, strong) Score * score;
 @property (nonatomic,strong) NSString * state;
 @property (nonatomic, strong) NSString * sortedWord;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 @property int pontuation;
 @end
 
@@ -166,9 +167,8 @@
 
 -(void)reset{
     self.errors = 0;
-    
     [self.hangManData sortAskFor:self.state];
-    NSDictionary * askDictionary = [self.hangManData sortAskFor:self.state];
+    NSDictionary * askDictionary = [[NSDictionary alloc]initWithDictionary:[self.hangManData sortAskFor:self.state]];
     self.sortedWord = [[askDictionary allKeys]objectAtIndex:0];
     self.askLabel.text = [askDictionary objectForKey:self.sortedWord];
     [self.wordView resetWithWord:self.sortedWord];
