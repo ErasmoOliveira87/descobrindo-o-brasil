@@ -8,7 +8,6 @@
 
 #import "HangViewController.h"
 #import "HangManView.h"
-#import "HangManWordLottery.h"
 #import "ScoreViewController.h"
 #import "Score.h"
 
@@ -23,13 +22,8 @@
 @property(weak,nonatomic)NSString *valueButtonChancer;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic,strong) NSString * state;
+@property (nonatomic, strong) NSString * sortedWord;
 @property int pontuation;
-
-
-
-
-
-
 @end
 
 @implementation HangViewController
@@ -50,15 +44,10 @@
     self.state = @"SP";                                                               // estático
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
     [self.view addSubview:self.hangManView];
-    self.hangManWordLottery = [[HangManWordLottery alloc]init];
-    [self.hangManWordLottery getRandomWord]; //sorteia palavra e charada!
-    
+    self.hangManData = [[HangmanData alloc]init];
+    NSDictionary * askDictionary = [self.hangManData sortAskFor:self.state];
+    self.sortedWord = [[askDictionary allKeys]objectAtIndex:0];
    
-    
-    NSString *wordLottery = self.hangManWordLottery.word;
-    
-    NSString *wordWithoutAccent = self.hangManWordLottery.wordWithoutAccent;
-    
     [self.wordView resetWithWord:wordWithoutAccent]; //Não tem acentuação essa palavra.
     [self.wordView wordWithAccent:wordLottery]; //Essa palavra sorteada tem acentuação.
     

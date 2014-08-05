@@ -13,7 +13,6 @@
 @property (nonatomic,strong) NSString * word;
 @property (weak, nonatomic) IBOutlet UILabel *hangWord;
 @property (nonatomic, strong) NSMutableString * updatedWord;
-@property(nonatomic,strong)NSString *wordWithAccent;
 
 
 @end
@@ -30,42 +29,40 @@
     {
         NSMutableString * str = [[NSMutableString alloc]initWithString:self.hangWord.text];
         
-        if([self.word characterAtIndex:aux] == key) {
-            
-            NSString *subWord = [self.wordWithAccent substringWithRange:NSMakeRange(aux, 1)];
-            
-           char newKey = [subWord characterAtIndex:0];
-            
-         self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux *2 , 1) withString:[NSString stringWithFormat:@"%c",newKey]];
-         self.updatedWord = [[self.updatedWord stringByReplacingCharactersInRange:NSMakeRange(aux , 1) withString:[NSString stringWithFormat:@"%c",newKey]]mutableCopy];
-
-           
-            //if ([self.word isEqualToString:self.updatedWord])
-            if ([self.wordWithAccent isEqualToString:self.updatedWord]) {
+        if([self.word characterAtIndex:aux] == key)
+        {
+            NSString *subWord = [self.word substringWithRange:NSMakeRange(aux, 1)];
+            char newKey = [subWord characterAtIndex:0];
+            self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux *2 , 1) withString:[NSString stringWithFormat:@"%c",newKey]];
+            self.updatedWord = [[self.updatedWord stringByReplacingCharactersInRange:NSMakeRange(aux , 1) withString:[NSString stringWithFormat:@"%c",newKey]]mutableCopy];
+            if ([self.word isEqualToString:self.updatedWord]) {
                 control = 2;
                 
-            }
+        }
             else
+            {
                 control = 1;
-           
+            }
         }
         
     }
     return control;
 }
 
--(void)wordWithAccent:(NSString *)withAccent{
 
-
-    self.wordWithAccent = withAccent;
-
+-(NSString *)getWordWithouAccent
+{
+    return [self.word stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
 }
+
+
+
 
 -(void)updateDisplayWord:(NSString*)word
 {
     NSMutableString *string = [[NSMutableString alloc]init];
     NSMutableString *stringWord = [[NSMutableString alloc]init];
-
+    
     for (int aux = 0; aux<word.length; aux++) {
         [string appendString:[NSString stringWithFormat:@"%c",[word characterAtIndex:aux]]];
         [stringWord appendString:[NSString stringWithFormat:@"%c",[word characterAtIndex:aux]]];
@@ -73,8 +70,8 @@
     }
     self.hangWord.text = string;
     self.updatedWord = stringWord;
-
-     [self setNeedsDisplay];
+    
+    [self setNeedsDisplay];
 }
 
 

@@ -50,20 +50,9 @@
 }
 
 
--(void)getWordWithouAccent:(NSString *)WordWithAccent{
+-(NSString *)getWordWithouAccent:(NSString *)WordWithAccent{
 
-
- //   NSData *stringData = [WordWithAccent dataUsingEncoding: NSASCIIStringEncoding allowLossyConversion: YES];
-    
- //   self.wordWithoutAccent = [[WordWithAccent stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]] uppercaseString];
-    
-    self.wordWithoutAccent = [WordWithAccent stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
-    
-  //  NSLog(@"sem acento! %@", self.wordWithoutAccent);
-    
- //   self.wordWithoutAccent = [[NSString alloc] initWithData: stringData encoding: NSASCIIStringEncoding];
-
-
+    return [WordWithAccent stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
 }
 
 
