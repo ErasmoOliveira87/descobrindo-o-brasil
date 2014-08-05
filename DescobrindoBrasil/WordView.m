@@ -13,6 +13,7 @@
 @property (nonatomic,strong) NSString * word;
 @property (weak, nonatomic) IBOutlet UILabel *hangWord;
 @property (nonatomic, strong) NSMutableString * updatedWord;
+@property(nonatomic,strong)NSString *wordWithAccent;
 
 
 @end
@@ -31,10 +32,16 @@
         
         if([self.word characterAtIndex:aux] == key) {
             
-         self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux *2 , 1) withString:[NSString stringWithFormat:@"%c",key]];
-        self.updatedWord = [[self.updatedWord stringByReplacingCharactersInRange:NSMakeRange(aux , 1) withString:[NSString stringWithFormat:@"%c",key]]mutableCopy];
+            NSString *subWord = [self.wordWithAccent substringWithRange:NSMakeRange(aux, 1)];
+            
+           char newKey = [subWord characterAtIndex:0];
+            
+         self.hangWord.text = [str stringByReplacingCharactersInRange:NSMakeRange(aux *2 , 1) withString:[NSString stringWithFormat:@"%c",newKey]];
+         self.updatedWord = [[self.updatedWord stringByReplacingCharactersInRange:NSMakeRange(aux , 1) withString:[NSString stringWithFormat:@"%c",newKey]]mutableCopy];
 
-            if ([self.word isEqualToString:self.updatedWord]) {
+           
+            //if ([self.word isEqualToString:self.updatedWord])
+            if ([self.wordWithAccent isEqualToString:self.updatedWord]) {
                 control = 2;
                 
             }
@@ -45,6 +52,13 @@
         
     }
     return control;
+}
+
+-(void)wordWithAccent:(NSString *)withAccent{
+
+
+    self.wordWithAccent = withAccent;
+
 }
 
 -(void)updateDisplayWord:(NSString*)word

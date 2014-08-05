@@ -28,6 +28,8 @@
 
 
 
+
+
 @end
 
 @implementation HangViewController
@@ -50,8 +52,16 @@
     [self.view addSubview:self.hangManView];
     self.hangManWordLottery = [[HangManWordLottery alloc]init];
     [self.hangManWordLottery getRandomWord]; //sorteia palavra e charada!
+    
+   
+    
     NSString *wordLottery = self.hangManWordLottery.word;
-    [self.wordView resetWithWord:wordLottery];
+    
+    NSString *wordWithoutAccent = self.hangManWordLottery.wordWithoutAccent;
+    
+    [self.wordView resetWithWord:wordWithoutAccent]; //Não tem acentuação essa palavra.
+    [self.wordView wordWithAccent:wordLottery]; //Essa palavra sorteada tem acentuação.
+    
     self.charadaLabel.text = self.hangManWordLottery.charade;
     self.keyboardView.delegate = self;
     
@@ -65,8 +75,30 @@
 }
 
 -(void)didSelectChar:(NSString *)character {
-    char key = [character characterAtIndex:0];
-    int control = [self.wordView selectChar:key];
+    
+  //  character.doubleValue;
+    char key='a';
+    int control=1;
+    
+  //  NSArray *accentedLetters=@[@"A",@"Á",@"Â",@"Ã",@"E",@"É",@"C",@"Ç",@"I",@"Í",@"O",@"Ó",@"Ô",@"U",@"Ú",@"Û"];
+  //  NSArray *accentedA= @[@"A",@"Á",@"Â",@"Ã"];
+  //  NSArray *accentedE= @[@"E",@"É",@"Ê"];
+  //  NSArray *accentedI= @[@"I",@"Í"];
+  //  NSArray *accentedO= @[@"O",@"Ó",@"Ô"];
+  //  NSArray *accentedU= @[@"U",@"Ú",@"Û"];
+  //  NSArray *accentedC= @[@"C",@"Ç"];
+    
+    
+  //  NSString *newString=@"A
+    
+    key = [character characterAtIndex:0];
+    
+    
+    
+    NSLog(@"valor da variavel sem vogais ou C: %c", key);
+    
+    control = [self.wordView selectChar:key];
+
     if(control ==0){
         self.errors++;
         [self.hangManView addMember];
@@ -173,9 +205,11 @@
     [self.hangManWordLottery getRandomWord];
     
     NSString *newWordLottery = self.hangManWordLottery.word;
+    NSString *newWordWithoutAccent = self.hangManWordLottery.wordWithoutAccent;
     
     self.charadaLabel.text = self.hangManWordLottery.charade;
-    [self.wordView resetWithWord:newWordLottery];
+    [self.wordView resetWithWord:newWordWithoutAccent];
+    [self.wordView wordWithAccent:newWordLottery];
     
     [self.keyboardView buttonEnable];
     
