@@ -13,6 +13,7 @@
 {
     self = [super init];
     if (self) {
+        self.data = [[NSMutableDictionary alloc]init];
         NSArray * estates = @[@"AC",@"AL",@"AP",@"AM",@"BA",@"CE",@"DF",@"ES",@"GO",@"MA",@"MT",@"MS",@"MG",@"PA",@"PB",@"PR",@"PE",@"PI",@"RJ",@"RN",@"RS",@"RO",@"RR",@"SC",@"SP",@"SE",@"TO"];
         for (int c = 0; c< 27; c++) {
             self.data[[estates objectAtIndex:c]] = [[NSMutableArray alloc]init];
@@ -33,7 +34,7 @@
 -(NSDictionary*) sortAskFor: (NSString*)state{
     NSMutableArray * stateArray = [self.data objectForKey:state];
     int randonIndex = arc4random() % [stateArray count];
-    NSDictionary* dictionary =  [stateArray objectAtIndex:randonIndex];
+    NSDictionary* dictionary =[[NSDictionary alloc]initWithDictionary:[stateArray objectAtIndex:randonIndex]];
     return dictionary;
 }
 
