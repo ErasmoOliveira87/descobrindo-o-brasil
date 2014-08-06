@@ -11,7 +11,10 @@
 @interface FragView : UIView
 
 
+@property (nonatomic, strong) UIImageView *flagView;
 
+
+-(void)buildFlag;
 
 
 @end
