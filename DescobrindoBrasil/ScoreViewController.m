@@ -70,6 +70,8 @@
         }
     }
 self.pointsLabel.text = [NSString stringWithFormat:@"%d pontos",self.score];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,6 +79,16 @@ self.pointsLabel.text = [NSString stringWithFormat:@"%d pontos",self.score];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)backToRoot:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)backHangman:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 /*
 #pragma mark - Navigation
