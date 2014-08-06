@@ -10,7 +10,7 @@
 
 @interface FragView()
 
-@property (nonatomic, strong) UIView *flagView;
+
 
 
 
@@ -28,9 +28,26 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
+        self.flagView = [[UIImageView alloc]initWithFrame:CGRectMake(700, 700, 25, 25)];
+        
+        [self buildFlag];
+        
     }
     return self;
 }
+
+
+
+-(void)buildFlag{
+
+    UIImage *imageteste = [UIImage imageNamed:@"flag-of-brazil_t"];
+    
+    [self.flagView setImage:imageteste];
+
+}
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
