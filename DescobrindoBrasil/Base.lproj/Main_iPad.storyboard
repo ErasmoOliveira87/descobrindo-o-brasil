@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="t39-ex-12b">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="iWZ-ed-Rum">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="t39-ex-12b" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mLg-5A-wab"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9sx-Fg-lZ4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HAB-km-R5y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUb-Nm-Ijd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-89" y="-2256"/>
+        </scene>
         <!--Hang View Controller-->
         <scene sceneID="Ca6-oR-cLr">
             <objects>
@@ -332,19 +348,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.79498016949881778" green="1" blue="0.43752869678342787" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gws-jb-zAi">
-                                <rect key="frame" x="0.0" y="45" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Forca Misteriosa" id="8AM-rz-jKj">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" width="5" style="done" id="AUA-1i-5mB">
-                                            <connections>
-                                                <action selector="btnBackClick:" destination="gsy-zp-lae" id="xhT-Im-p7B"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WF4-hI-pwA" customClass="WordView">
                                 <rect key="frame" x="20" y="663" width="728" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -366,14 +369,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="0Dx-HO-xkp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="askLabel" destination="i7D-gg-E4W" id="bd9-yS-qqz"/>
-                        <outlet property="btnBack" destination="AUA-1i-5mB" id="SW8-4Q-MHK"/>
                         <outlet property="chanceButton" destination="cO0-NW-Jqi" id="Llb-Ha-fBU"/>
                         <outlet property="keyboardView" destination="kIx-mK-Z6f" id="gqo-Ab-gdU"/>
                         <outlet property="wordView" destination="WF4-hI-pwA" id="tez-iV-mU9"/>
-                        <segue destination="hxu-kO-yiz" kind="modal" identifier="score" id="bkR-Sl-PtP"/>
+                        <segue destination="hxu-kO-yiz" kind="push" identifier="score" id="bkR-Sl-PtP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpg-Hu-L4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +432,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="modal" id="ydM-2n-B2I"/>
+                                            <action selector="backToRoot:" destination="hxu-kO-yiz" eventType="touchUpInside" id="CgC-F6-aVl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySX-58-D3F">
@@ -439,7 +442,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="gsy-zp-lae" kind="modal" id="cDH-3X-iIA"/>
+                                            <action selector="backHangman:" destination="hxu-kO-yiz" eventType="touchUpInside" id="uLb-rV-Mfs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -463,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aqe-CI-xUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="-941"/>
+            <point key="canvasLocation" x="1554" y="-993"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -492,9 +495,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mY8-lF-HfY"/>
                     <connections>
                         <outlet property="brazilView" destination="aRK-qi-Ivf" id="z8T-yV-MCp"/>
-                        <segue destination="gsy-zp-lae" kind="modal" identifier="HangViewController" id="wID-Bm-2Wj"/>
+                        <segue destination="gsy-zp-lae" kind="push" identifier="HangViewController" id="jXa-yR-jiB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -539,7 +543,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="wID-Bm-2Wj"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -56,7 +56,18 @@
     
     self.keyboardView.delegate = self;
     
+    [self.navigationItem setTitle:@"Forca Misteriosa"];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    
+    [self reset];
+    
+    
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -199,11 +210,6 @@
     
 }
 
-- (IBAction)btnBackClick:(id)sender {
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-}
 
 
 
