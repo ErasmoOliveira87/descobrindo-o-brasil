@@ -11,6 +11,7 @@
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet BrazilView *brazilView;
+@property (nonatomic) State* tappedState;
 
 @end
 
@@ -37,7 +38,8 @@
 
 //verifica se o estado é da região sudeste, em caso afirmativo ativa o segue para o HangViewController
 -(void)tapOnState:(NSString *)state {
-    NSLog(@"passei aqui");
+    
+    self.tappedState = [StatesRepository stateForName:state];
     
     //informacoes de model
     NSArray *sudeste = [NSArray arrayWithObjects:@"SP", @"MG", @"ES", @"RJ", nil];
@@ -46,6 +48,15 @@
         
         if([state isEqualToString:sudesteState])
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString: @"HangViewController"]) {
+        
+        HangViewController * hangControlller = (HangViewController*)segue.destinationViewController;
+        hangControlller.state = self.tappedState;
     }
 }
 

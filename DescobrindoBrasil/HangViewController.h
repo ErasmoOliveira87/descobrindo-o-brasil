@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "KeyboardView.h"
 #import "WordView.h"
-#import "HangmanData.h"
-
+#import "State.h"
 
 @interface HangViewController : UIViewController <KeyboardViewDelegate>
 @property (weak, nonatomic) IBOutlet KeyboardView *keyboardView;
 @property(nonatomic)IBOutlet WordView *wordView;
-@property(strong,nonatomic) HangmanData *hangManData;
-
+@property (nonatomic, strong) State* state;
 
 
 -(void)didSelectChar:(NSString *)character;

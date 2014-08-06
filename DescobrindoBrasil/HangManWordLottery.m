@@ -50,7 +50,7 @@
     NSString *jsonPath2 = [[NSBundle mainBundle] pathForResource:@"palavras_categorias" ofType:@"json"];
     NSData *jsonData2 = [NSData dataWithContentsOfFile:jsonPath2];
     NSError *error = nil;
-    NSDictionary *parseData = [NSJSONSerialization JSONObjectWithData:jsonData2 options:0 error:&error] ; nil;
+    NSDictionary *parseData = [NSJSONSerialization JSONObjectWithData:jsonData2 options:0 error:&error] ;
     return parseData;
     
 }

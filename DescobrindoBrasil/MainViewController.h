@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BrazilView.h"
 #import "MapOverlay.h"
+#import "HangViewController.h"
+#import "State.h"
+#import "StatesRepository.h"
 
 @interface MainViewController : UIViewController <mapOverlayDelegate>
 

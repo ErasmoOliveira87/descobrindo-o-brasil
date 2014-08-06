@@ -24,7 +24,7 @@
     self = [super initWithCoder:aDecoder];
     
     if (self)
-        [self initialize];
+        [self initialization];
     
     return self;
 }
@@ -34,12 +34,12 @@
     self = [super initWithFrame:frame];
     
     if (self)
-        [self initialize];
+        [self initialization];
     
     return self;
 }
 
--(void)initialize {
+-(void)initialization {
     
     UIImage *brazilMap = [UIImage imageNamed:@"brazil_blank_map"];
     UIImageView *mapImageView = [[UIImageView alloc] initWithImage:brazilMap];
