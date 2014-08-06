@@ -17,7 +17,6 @@
 
 
 -(void)getRandomWord;
--(void)getWordWithouAccent:(NSString *)WordWithAccent;
 -(NSDictionary*)allWord;
 
 @end

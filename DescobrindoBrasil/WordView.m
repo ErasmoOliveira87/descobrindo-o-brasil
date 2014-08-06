@@ -25,11 +25,12 @@
 -(int)selectChar:(char) key
 {
     int control = 0;
+    
     for (int aux = 0; aux < self.word.length; aux++)
     {
         NSMutableString * str = [[NSMutableString alloc]initWithString:self.hangWord.text];
         
-        if([self.word characterAtIndex:aux] == key)
+        if([[self getWordWithouAccent] characterAtIndex:aux] == key)
         {
             NSString *subWord = [self.word substringWithRange:NSMakeRange(aux, 1)];
             char newKey = [subWord characterAtIndex:0];
@@ -49,14 +50,13 @@
     return control;
 }
 
-
+//remove acentos e letras maiúsculas
 -(NSString *)getWordWithouAccent
 {
-    return [self.word stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
+    NSString *simpleWord = [self.word stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
+    
+    return [simpleWord stringByFoldingWithOptions:NSCaseInsensitiveSearch locale:[NSLocale currentLocale]];
 }
-
-
-
 
 -(void)updateDisplayWord:(NSString*)word
 {
@@ -79,9 +79,9 @@
 {
     self.word = word;
     NSString * str = [self encodingWord:word.length];
+    [self updateDisplayWord:str];
     [self selectChar:' '];
     [self selectChar:'-'];
-    [self updateDisplayWord:str];
 }
 
 -(NSString*)encodingWord:(NSUInteger)wordLenght

@@ -68,7 +68,11 @@
 -(void)didSelectChar:(NSString *)character {
     
     int control=1;
-    char key = [character characterAtIndex:0];
+    
+    NSString *simpleCharacter = [character stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
+    simpleCharacter = [simpleCharacter stringByFoldingWithOptions:NSCaseInsensitiveSearch locale:[NSLocale currentLocale]];
+    
+    char key = [simpleCharacter characterAtIndex:0];
     control = [self.wordView selectChar:key];
 
     if(control ==0){

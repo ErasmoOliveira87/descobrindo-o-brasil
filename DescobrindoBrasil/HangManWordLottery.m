@@ -40,19 +40,8 @@
     self.word = wordSeleted;
     self.charade = charadeSelect;
     
-    
-    
-   
-    [self getWordWithouAccent:self.word];
-    
    // NSLog(@"palavra sem acento %@", cleanString);
     
-}
-
-
--(NSString *)getWordWithouAccent:(NSString *)WordWithAccent{
-
-    return [WordWithAccent stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
 }
 
 
