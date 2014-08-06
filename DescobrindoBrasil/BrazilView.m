@@ -7,6 +7,7 @@
 //
 
 #import "BrazilView.h"
+#import "FragView.h"
 
 @interface BrazilView ()
 
@@ -26,6 +27,10 @@
     if (self)
         [self initialize];
     
+    self.flagView = [[FragView alloc]init];
+    
+   // [self addFlag:self.flagView.flagView];
+    
     return self;
 }
 
@@ -36,8 +41,34 @@
     if (self)
         [self initialize];
     
+    self.flagView = [[FragView alloc]init];
+    
+  //  [self addFlag:self.flagView.flagView];
+    
     return self;
 }
+
+-(void)addFlag:(UIImageView *)flagImageView{
+
+    [_mapContainerView addSubview:flagImageView];
+    
+    [self addSubview:_mapContainerView];
+
+
+}
+
+-(void)addFlag{
+
+    [_mapContainerView addSubview:self.flagView.flagView];
+    
+    [self addSubview:_mapContainerView];
+    
+
+}
+
+
+
+
 
 -(void)initialize {
     

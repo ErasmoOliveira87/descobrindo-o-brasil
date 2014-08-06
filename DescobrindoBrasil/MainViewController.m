@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet BrazilView *brazilView;
 
+@property(nonatomic)bool confere;
+
 @end
 
 @implementation MainViewController
@@ -25,6 +27,21 @@
     //recebe eventos de toque do mapa
     self.brazilView.overlay.delegate = self;
     
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:YES];
+    
+
+    
+    NSLog(@"testando DiaAppear %d", self.confere);
+        self.brazilView.overlay.delegate = self;
+    
+        if(self.confere){
+    [self.brazilView addFlag];
+        }
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +62,11 @@
     for (NSString *sudesteState in sudeste) {
         
         if([state isEqualToString:sudesteState])
+        {
+            self.confere = YES;
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
+            break;
+        }
     }
 }
 
