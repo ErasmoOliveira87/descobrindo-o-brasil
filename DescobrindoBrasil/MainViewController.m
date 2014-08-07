@@ -7,11 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "HangViewController.h"
 
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet BrazilView *brazilView;
 @property (nonatomic) State* tappedState;
+
+@property(nonatomic, strong) NSString *  currentState;
 
 @end
 
@@ -26,6 +29,14 @@
     //recebe eventos de toque do mapa
     self.brazilView.overlay.delegate = self;
     
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,26 +49,24 @@
 
 //verifica se o estado é da região sudeste, em caso afirmativo ativa o segue para o HangViewController
 -(void)tapOnState:(NSString *)state {
-    
+
     self.tappedState = [StatesRepository stateForName:state];
-    
-    //informacoes de model
-    NSArray *sudeste = [NSArray arrayWithObjects:@"SP", @"MG", @"ES", @"RJ", nil];
-    
-    for (NSString *sudesteState in sudeste) {
-        
-        if([state isEqualToString:sudesteState])
+    self.currentState = state;
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
-    }
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if([segue.identifier isEqualToString: @"HangViewController"]) {
-        
-        HangViewController * hangControlller = (HangViewController*)segue.destinationViewController;
-        hangControlller.state = self.tappedState;
-    }
+    
 }
 
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+     if ([[segue identifier] isEqualToString:@"HangViewController" ]) {
+         HangViewController * hangManViewController = [segue destinationViewController];
+         hangManViewController.state = self.tappedState;
+         
+     }
+     
+ }
 @end

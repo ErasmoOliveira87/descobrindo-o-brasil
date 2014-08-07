@@ -27,7 +27,7 @@
 //le as perguntas do JSON
 +(NSArray*)questionsForStateName:(NSString*)name {
     
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"questionsForState" ofType:@"json"];
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"HangManAsks" ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
     NSError *error = nil;
     NSDictionary *parsedData = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
@@ -38,7 +38,7 @@
     
     for (NSString* question in questionsDict.keyEnumerator) {
         
-        [questionsArray addObject:[[HangmanQuestion alloc] initWithQuestion:question Answer:[questionsDict objectForKey:question]]];
+        [questionsArray addObject:[[HangmanQuestion alloc] initWithQuestion:[questionsDict objectForKey:question] Answer:question]];
     }
     
     return questionsArray;

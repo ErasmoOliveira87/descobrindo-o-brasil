@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MapOverlay.h"
+#import "FragView.h"
 
 @interface BrazilView : UIScrollView <UIScrollViewDelegate>
 
 @property (weak, nonatomic) MapOverlay *overlay;
+@property(strong,nonatomic)FragView *flagView;
+
+-(void)addFlag;
 
 @end

@@ -8,18 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		6F21EB4E19910C73007AF5EA /* FragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F21EB4D19910C73007AF5EA /* FragView.m */; };
-		6FCD80FB197D544F00CA162A /* HangManWordLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD80FA197D544F00CA162A /* HangManWordLottery.m */; };
 		6FCD80FD197E8A4C00CA162A /* palavras_categorias.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */; };
 		AA1D5FFE1976BF3C00F69A0F /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */; };
 		AA1D600219926D6900F69A0F /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D600119926D6900F69A0F /* State.m */; };
 		AA1D600519926FAC00F69A0F /* StatesRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D600419926FAC00F69A0F /* StatesRepository.m */; };
 		AA1D6009199277C800F69A0F /* HangmanQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D6008199277C800F69A0F /* HangmanQuestion.m */; };
-		AA1D600B1992841D00F69A0F /* questionsForState.json in Resources */ = {isa = PBXBuildFile; fileRef = AA1D600A1992841D00F69A0F /* questionsForState.json */; };
 		E206C92719756A2200716112 /* BrazilView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92619756A2200716112 /* BrazilView.m */; };
 		E206C92A19756A4200716112 /* WordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92919756A4200716112 /* WordView.m */; };
 		E206C92D19756A5400716112 /* KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92C19756A5400716112 /* KeyboardView.m */; };
 		E206C93019756A6F00716112 /* HangManView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92F19756A6F00716112 /* HangManView.m */; };
 		E206C93319756A8700716112 /* HangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C93219756A8700716112 /* HangViewController.m */; };
+		E2160D261993A57B00E9CCF0 /* HangManAsks.json in Resources */ = {isa = PBXBuildFile; fileRef = E2160D251993A57B00E9CCF0 /* HangManAsks.json */; };
 		E2341ED21973F91B0030043F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2341ED11973F91B0030043F /* Foundation.framework */; };
 		E2341ED41973F91B0030043F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2341ED31973F91B0030043F /* CoreGraphics.framework */; };
 		E2341ED61973F91B0030043F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2341ED51973F91B0030043F /* UIKit.framework */; };
@@ -52,8 +51,6 @@
 /* Begin PBXFileReference section */
 		6F21EB4C19910C73007AF5EA /* FragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FragView.h; sourceTree = "<group>"; };
 		6F21EB4D19910C73007AF5EA /* FragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FragView.m; sourceTree = "<group>"; };
-		6FCD80F9197D544F00CA162A /* HangManWordLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangManWordLottery.h; sourceTree = "<group>"; };
-		6FCD80FA197D544F00CA162A /* HangManWordLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangManWordLottery.m; sourceTree = "<group>"; };
 		6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = palavras_categorias.json; sourceTree = SOURCE_ROOT; };
 		AA1D5FFC1976BF3C00F69A0F /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlay.h; sourceTree = "<group>"; };
 		AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlay.m; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		AA1D600419926FAC00F69A0F /* StatesRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatesRepository.m; sourceTree = "<group>"; };
 		AA1D6007199277C800F69A0F /* HangmanQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangmanQuestion.h; sourceTree = "<group>"; };
 		AA1D6008199277C800F69A0F /* HangmanQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangmanQuestion.m; sourceTree = "<group>"; };
-		AA1D600A1992841D00F69A0F /* questionsForState.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionsForState.json; sourceTree = "<group>"; };
 		E206C92519756A2200716112 /* BrazilView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrazilView.h; sourceTree = "<group>"; };
 		E206C92619756A2200716112 /* BrazilView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrazilView.m; sourceTree = "<group>"; };
 		E206C92819756A4200716112 /* WordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordView.h; sourceTree = "<group>"; };
@@ -74,6 +70,7 @@
 		E206C92F19756A6F00716112 /* HangManView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangManView.m; sourceTree = "<group>"; };
 		E206C93119756A8700716112 /* HangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangViewController.h; sourceTree = "<group>"; };
 		E206C93219756A8700716112 /* HangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangViewController.m; sourceTree = "<group>"; };
+		E2160D251993A57B00E9CCF0 /* HangManAsks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HangManAsks.json; sourceTree = "<group>"; };
 		E2341ECE1973F91B0030043F /* DescobrindoBrasil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DescobrindoBrasil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2341ED11973F91B0030043F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E2341ED31973F91B0030043F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,11 +221,9 @@
 			children = (
 				AA1D600619926FB300F69A0F /* States */,
 				6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */,
-				AA1D600A1992841D00F69A0F /* questionsForState.json */,
-				6FCD80F9197D544F00CA162A /* HangManWordLottery.h */,
-				6FCD80FA197D544F00CA162A /* HangManWordLottery.m */,
 				AA1D6007199277C800F69A0F /* HangmanQuestion.h */,
 				AA1D6008199277C800F69A0F /* HangmanQuestion.m */,
+				E2160D251993A57B00E9CCF0 /* HangManAsks.json */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -349,8 +344,8 @@
 				E2341EE81973F91B0030043F /* Main_iPad.storyboard in Resources */,
 				E2341EED1973F91B0030043F /* Images.xcassets in Resources */,
 				E2341EE51973F91B0030043F /* Main_iPhone.storyboard in Resources */,
+				E2160D261993A57B00E9CCF0 /* HangManAsks.json in Resources */,
 				E2341EDC1973F91B0030043F /* InfoPlist.strings in Resources */,
-				AA1D600B1992841D00F69A0F /* questionsForState.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +372,6 @@
 				E2FE91D0198A76ED0048B323 /* ScoreViewController.m in Sources */,
 				E2341EE21973F91B0030043F /* AppDelegate.m in Sources */,
 				AA1D600519926FAC00F69A0F /* StatesRepository.m in Sources */,
-				6FCD80FB197D544F00CA162A /* HangManWordLottery.m in Sources */,
 				E2FE91CD198A75140048B323 /* ScoreView.m in Sources */,
 				AA1D5FFE1976BF3C00F69A0F /* MapOverlay.m in Sources */,
 				E206C92A19756A4200716112 /* WordView.m in Sources */,

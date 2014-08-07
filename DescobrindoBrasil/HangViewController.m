@@ -84,10 +84,11 @@
     if(control ==0){
         self.errors++;
         [self.hangManView addMember];
+         NSLog(@"control %i", control);
         if (self.errors > 6) {
             [self performSegueWithIdentifier:@"score" sender:self];
         }
-    }
+    }    //Se o control for 2 o jogador conquista a vitória.
     else if (control == 2)
     {
         self.state.points = self.pontuation;
@@ -177,7 +178,7 @@
     
     if([self.state.questions count] == 0) {
         NSLog(@"erro, estado sem perguntas");
-        self.state = [StatesRepository stateForName:@"SP"];
+        self.state = [StatesRepository stateForName:@"PE"];
     }
     
     HangmanQuestion * question = [self.state.questions objectAtIndex:arc4random() % [self.state.questions count]];

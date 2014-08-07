@@ -7,6 +7,7 @@
 //
 
 #import "BrazilView.h"
+#import "FragView.h"
 
 @interface BrazilView ()
 
@@ -26,6 +27,10 @@
     if (self)
         [self initialization];
     
+    self.flagView = [[FragView alloc]init];
+    
+   // [self addFlag:self.flagView.flagView];
+    
     return self;
 }
 
@@ -35,6 +40,10 @@
     
     if (self)
         [self initialization];
+    
+    self.flagView = [[FragView alloc]init];
+    
+  //  [self addFlag:self.flagView.flagView];
     
     return self;
 }
