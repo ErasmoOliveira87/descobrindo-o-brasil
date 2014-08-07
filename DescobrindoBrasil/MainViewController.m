@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "HangViewController.h"
 
 @interface MainViewController ()
 
@@ -67,9 +68,20 @@
             
             [self.statewithFlag addObject:state];
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
-            break;
-        }
-    }
+    
+    
 }
 
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+     if ([[segue identifier] isEqualToString:@"HangViewController" ]) {
+         HangViewController * hangManViewController = [segue destinationViewController];
+         hangManViewController.state = self.currentState;
+         
+     }
+     
+ }
 @end

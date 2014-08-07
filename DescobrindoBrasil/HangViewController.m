@@ -21,7 +21,6 @@
 @property(strong,nonatomic) UIAlertView *alertViewMensagem;
 @property(weak,nonatomic)NSString *valueButtonChancer;
 @property (nonatomic, strong) Score * score;
-@property (nonatomic,strong) NSString * state;
 @property (nonatomic, strong) NSString * sortedWord;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 @property int pontuation;
@@ -47,7 +46,6 @@
 {
     [super viewDidLoad];
     self.score = [[Score alloc]init];
-    self.state = @"SP";                                                               // estático
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
     [self.view addSubview:self.hangManView];
     self.hangManData = [[HangmanData alloc]init];
@@ -194,7 +192,7 @@
     self.sortedWord = [[askDictionary allKeys]objectAtIndex:0];
     self.askLabel.text = [askDictionary objectForKey:self.sortedWord];
     [self.wordView resetWithWord:self.sortedWord];
-    [self.keyboardView buttonEnable];
+    [self.keyboardView resetKeyboard];
     [self.hangManView eraseHangMan];
 }
 
