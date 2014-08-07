@@ -7,6 +7,7 @@
 //
 
 #import "KeyboardView.h"
+#define originTransform = 0
 
 @implementation KeyboardView
 
@@ -34,13 +35,13 @@
     
     [self.delegate didSelectChar:sender.titleLabel.text];
     
-    NSLog(@"Identifica Botão %@", sender.currentTitle);
+    [self animateKeyBoard:sender];
+    
     sender.enabled = NO;
-    sender.hidden = YES;
+    //sender.hidden = YES;
 }
 
-
--(void)buttonEnable{
+-(void)resetKeyboard{
     
     for(UIView *subView in self.subviews )
     {
@@ -48,9 +49,26 @@
             
             UIButton *button = (UIButton *) subView;
             button.enabled = YES;
-            button.hidden = NO;
+            //button.hidden = NO;
+            button.alpha = 1.0;
+            button.transform = CGAffineTransformMakeScale(1.25, 1.25);
         }
     }
+}
+
+-(void) animateKeyBoard: (UIButton*)pressedKey
+{
+    NSLog(@"pressed %@", pressedKey.currentTitle);
+
+    [UIView animateWithDuration:0.2 animations:^{
+
+        pressedKey.transform = CGAffineTransformMakeScale(2.5, 2.5);
+        pressedKey.transform = CGAffineTransformMakeRotation(360.0);
+        pressedKey.alpha = 0.0;
+        //pressedKey.hidden = YES;
+
+    }];
+    
 }
 
 

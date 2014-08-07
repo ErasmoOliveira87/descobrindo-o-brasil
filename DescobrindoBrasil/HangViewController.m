@@ -194,7 +194,7 @@
     self.sortedWord = [[askDictionary allKeys]objectAtIndex:0];
     self.askLabel.text = [askDictionary objectForKey:self.sortedWord];
     [self.wordView resetWithWord:self.sortedWord];
-    [self.keyboardView buttonEnable];
+    [self.keyboardView resetKeyboard];
     [self.hangManView eraseHangMan];
 }
 
