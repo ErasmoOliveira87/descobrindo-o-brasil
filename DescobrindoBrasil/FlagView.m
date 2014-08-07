@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Matheus Alves Silveira. All rights reserved.
 //
 
-#import "FragView.h"
+#import "FlagView.h"
 
-@interface FragView()
+@interface FlagView()
 
 
 
@@ -17,7 +17,7 @@
 @end
 
 
-@implementation FragView
+@implementation FlagView
 
 
 
@@ -29,9 +29,11 @@
     if (self) {
         // Initialization code
         
-        self.flagView = [[UIImageView alloc]initWithFrame:CGRectMake(700, 700, 25, 25)];
+     //   self.flagView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
         
         [self buildFlag];
+        
+        [self addSubview:self.flagView];
         
     }
     return self;
@@ -43,7 +45,13 @@
 
     UIImage *imageteste = [UIImage imageNamed:@"flag-of-brazil_t"];
     
-    [self.flagView setImage:imageteste];
+    UIImage *imageTeste = [[UIImage alloc]initWithCGImage:imageteste.CGImage scale:5.5 orientation:UIImageOrientationUp ];
+    
+   // [self.flagView setImage:imageteste];
+    
+    self.flagView= [[UIImageView alloc]initWithImage:imageTeste];
+    
+    
 
 }
 

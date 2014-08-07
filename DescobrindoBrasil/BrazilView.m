@@ -7,12 +7,24 @@
 //
 
 #import "BrazilView.h"
-#import "FragView.h"
+#import "FlagView.h"
 
 @interface BrazilView ()
 
 //contém a imagem do mapa + overlay para detectar toques
 @property (strong, nonatomic) UIView *mapContainerView;
+
+@property(strong,nonatomic)NSDictionary *flagLocationForState;
+
+
+
+
+
+
+
+
+
+
 
 @end
 
@@ -27,7 +39,7 @@
     if (self)
         [self initialize];
     
-    self.flagView = [[FragView alloc]init];
+    self.flagView = [[FlagView alloc]init];
     
    // [self addFlag:self.flagView.flagView];
     
@@ -41,23 +53,16 @@
     if (self)
         [self initialize];
     
-    self.flagView = [[FragView alloc]init];
+    self.flagView = [[FlagView alloc]init];
     
   //  [self addFlag:self.flagView.flagView];
     
     return self;
 }
 
--(void)addFlag:(UIImageView *)flagImageView{
-
-    [_mapContainerView addSubview:flagImageView];
-    
-    [self addSubview:_mapContainerView];
 
 
-}
-
--(void)addFlag{
+-(void)addFlag:(CGPoint)point{
 
     [_mapContainerView addSubview:self.flagView.flagView];
     
@@ -66,6 +71,27 @@
 
 }
 
+
+-(void)placeFlagsOnStates:(NSArray *)states{
+
+
+    for (NSString *state in states) {
+        
+        NSLog(@"state: %@", states);
+        
+        FlagView *flag = [[FlagView alloc]init];
+        
+        [self.mapContainerView addSubview:flag];
+        
+        NSValue *pointValue = [self.flagLocationForState objectForKey:state];
+        
+        flag.center = [pointValue CGPointValue];
+        
+    }
+    
+
+
+}
 
 
 
@@ -96,6 +122,15 @@
     self.maximumZoomScale = 2.0;
     self.minimumZoomScale = 0.75;
     self.zoomScale = 0.75;
+    
+    
+    CGPoint stateSP = CGPointMake(633.333313, 689.333313);
+    
+    NSValue *spValue = [NSValue valueWithCGPoint:stateSP];
+    
+    self.flagLocationForState = @{@"SP": spValue} ;
+    
+    
 }
 
 #pragma mark UIScrollView Delegate

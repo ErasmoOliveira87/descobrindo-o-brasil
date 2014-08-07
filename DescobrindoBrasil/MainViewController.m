@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet BrazilView *brazilView;
 
-@property(nonatomic)bool confere;
+
 
 @end
 
@@ -24,6 +24,11 @@
 {
     [super viewDidLoad];
     
+    
+  //  self.statewithFlag = [[NSMutableArray alloc]initWithArray:@[@"SP" ]];
+    
+    self.statewithFlag = [[NSMutableArray alloc]init];
+    
     //recebe eventos de toque do mapa
     self.brazilView.overlay.delegate = self;
     
@@ -34,14 +39,10 @@
 
     [super viewDidAppear:YES];
     
-
+    [self.brazilView placeFlagsOnStates:self.statewithFlag];
     
-    NSLog(@"testando DiaAppear %d", self.confere);
+   
         self.brazilView.overlay.delegate = self;
-    
-        if(self.confere){
-    [self.brazilView addFlag];
-        }
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +64,8 @@
         
         if([state isEqualToString:sudesteState])
         {
-            self.confere = YES;
+            
+            [self.statewithFlag addObject:state];
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
             break;
         }

@@ -303,7 +303,7 @@
     if(recognizer.state == UIGestureRecognizerStateRecognized) {
         
         CGPoint tapLocation = [recognizer locationInView:self];
-        
+        NSLog(@"ponto de estado: %f %f ", tapLocation.x,tapLocation.y);
         for (UIBezierPath *path in self.stateForPath) {
         
             if([path containsPoint:tapLocation]) {

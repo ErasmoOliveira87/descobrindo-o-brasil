@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F21EB4E19910C73007AF5EA /* FragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F21EB4D19910C73007AF5EA /* FragView.m */; };
+		6F21EB4E19910C73007AF5EA /* FlagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F21EB4D19910C73007AF5EA /* FlagView.m */; };
 		6FCD80FB197D544F00CA162A /* HangManWordLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD80FA197D544F00CA162A /* HangManWordLottery.m */; };
 		6FCD80FD197E8A4C00CA162A /* palavras_categorias.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */; };
 		AA1D5FFE1976BF3C00F69A0F /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */; };
@@ -48,8 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6F21EB4C19910C73007AF5EA /* FragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FragView.h; sourceTree = "<group>"; };
-		6F21EB4D19910C73007AF5EA /* FragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FragView.m; sourceTree = "<group>"; };
+		6F21EB4C19910C73007AF5EA /* FlagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagView.h; sourceTree = "<group>"; };
+		6F21EB4D19910C73007AF5EA /* FlagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagView.m; sourceTree = "<group>"; };
 		6FCD80F9197D544F00CA162A /* HangManWordLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangManWordLottery.h; sourceTree = "<group>"; };
 		6FCD80FA197D544F00CA162A /* HangManWordLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangManWordLottery.m; sourceTree = "<group>"; };
 		6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = palavras_categorias.json; sourceTree = SOURCE_ROOT; };
@@ -240,8 +240,8 @@
 				E2FE91CC198A75140048B323 /* ScoreView.m */,
 				E206C92819756A4200716112 /* WordView.h */,
 				E206C92919756A4200716112 /* WordView.m */,
-				6F21EB4C19910C73007AF5EA /* FragView.h */,
-				6F21EB4D19910C73007AF5EA /* FragView.m */,
+				6F21EB4C19910C73007AF5EA /* FlagView.h */,
+				6F21EB4D19910C73007AF5EA /* FlagView.m */,
 				E206C92B19756A5400716112 /* KeyboardView.h */,
 				E206C92C19756A5400716112 /* KeyboardView.m */,
 				E206C92E19756A6F00716112 /* HangManView.h */,
@@ -356,7 +356,7 @@
 				E2341EEB1973F91B0030043F /* MainViewController.m in Sources */,
 				E208BD87198BBAB600D36C1D /* HangmanData.m in Sources */,
 				E206C93319756A8700716112 /* HangViewController.m in Sources */,
-				6F21EB4E19910C73007AF5EA /* FragView.m in Sources */,
+				6F21EB4E19910C73007AF5EA /* FlagView.m in Sources */,
 				E2FE91D0198A76ED0048B323 /* ScoreViewController.m in Sources */,
 				E2341EE21973F91B0030043F /* AppDelegate.m in Sources */,
 				E2FE91D3198A83EE0048B323 /* Score.m in Sources */,
