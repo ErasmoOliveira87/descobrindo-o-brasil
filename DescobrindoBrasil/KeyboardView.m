@@ -58,8 +58,6 @@
 
 -(void) animateKeyBoard: (UIButton*)pressedKey
 {
-    NSLog(@"pressed %@", pressedKey.currentTitle);
-
     [UIView animateWithDuration:0.2 animations:^{
 
         pressedKey.transform = CGAffineTransformMakeScale(2.5, 2.5);
