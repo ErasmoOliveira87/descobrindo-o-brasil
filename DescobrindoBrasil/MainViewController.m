@@ -7,12 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "HangViewController.h"
 
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet BrazilView *brazilView;
 
-@property(nonatomic)bool confere;
+@property bool confere;
+@property(nonatomic, strong) NSString *  currentState;
 
 @end
 
@@ -54,20 +56,24 @@
 
 //verifica se o estado é da região sudeste, em caso afirmativo ativa o segue para o HangViewController
 -(void)tapOnState:(NSString *)state {
-    NSLog(@"passei aqui");
-    
-    //informacoes de model
-    NSArray *sudeste = [NSArray arrayWithObjects:@"SP", @"MG", @"ES", @"RJ", nil];
-    
-    for (NSString *sudesteState in sudeste) {
-        
-        if([state isEqualToString:sudesteState])
-        {
+
+    self.currentState = state;
             self.confere = YES;
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
-            break;
-        }
-    }
+    
+    
 }
 
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+     if ([[segue identifier] isEqualToString:@"HangViewController" ]) {
+         HangViewController * hangManViewController = [segue destinationViewController];
+         hangManViewController.state = self.currentState;
+         
+     }
+     
+ }
 @end

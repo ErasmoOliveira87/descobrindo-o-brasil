@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet KeyboardView *keyboardView;
 @property(nonatomic)IBOutlet WordView *wordView;
 @property(strong,nonatomic) HangmanData *hangManData;
-
+@property (nonatomic,strong) NSString * state;
 
 
 -(void)didSelectChar:(NSString *)character;
