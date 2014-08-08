@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6F21EB4E19910C73007AF5EA /* FlagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F21EB4D19910C73007AF5EA /* FlagView.m */; };
-		6FCD80FB197D544F00CA162A /* HangManWordLottery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD80FA197D544F00CA162A /* HangManWordLottery.m */; };
 		6FCD80FD197E8A4C00CA162A /* palavras_categorias.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */; };
 		AA1D5FFE1976BF3C00F69A0F /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */; };
 		E206C92719756A2200716112 /* BrazilView.m in Sources */ = {isa = PBXBuildFile; fileRef = E206C92619756A2200716112 /* BrazilView.m */; };
@@ -51,8 +50,6 @@
 /* Begin PBXFileReference section */
 		6F21EB4C19910C73007AF5EA /* FlagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagView.h; sourceTree = "<group>"; };
 		6F21EB4D19910C73007AF5EA /* FlagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagView.m; sourceTree = "<group>"; };
-		6FCD80F9197D544F00CA162A /* HangManWordLottery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangManWordLottery.h; sourceTree = "<group>"; };
-		6FCD80FA197D544F00CA162A /* HangManWordLottery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangManWordLottery.m; sourceTree = "<group>"; };
 		6FCD80FC197E8A4C00CA162A /* palavras_categorias.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = palavras_categorias.json; sourceTree = SOURCE_ROOT; };
 		AA1D5FFC1976BF3C00F69A0F /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlay.h; sourceTree = "<group>"; };
 		AA1D5FFD1976BF3C00F69A0F /* MapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOverlay.m; sourceTree = "<group>"; };
@@ -299,7 +296,7 @@
 				ORGANIZATIONNAME = "Matheus Alves Silveira";
 				TargetAttributes = {
 					E2341ECD1973F91B0030043F = {
-						DevelopmentTeam = XDUE6H33G5;
+						DevelopmentTeam = 5VY59625HC;
 					};
 					E2341EF11973F91B0030043F = {
 						TestTargetID = E2341ECD1973F91B0030043F;

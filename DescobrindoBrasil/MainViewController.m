@@ -12,6 +12,7 @@
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet BrazilView *brazilView;
+@property (strong, nonatomic) NSString * currentSate;
 
 
 
@@ -56,16 +57,7 @@
 
 //verifica se o estado é da região sudeste, em caso afirmativo ativa o segue para o HangViewController
 -(void)tapOnState:(NSString *)state {
-    NSLog(@"passei aqui");
-    
-    //informacoes de model
-    NSArray *sudeste = [NSArray arrayWithObjects:@"SP", @"MG", @"ES", @"RJ", nil];
-    
-    for (NSString *sudesteState in sudeste) {
-        
-        if([state isEqualToString:sudesteState])
-        {
-            
+    self.currentSate = state;
             [self.statewithFlag addObject:state];
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
     
@@ -79,7 +71,7 @@
  {
      if ([[segue identifier] isEqualToString:@"HangViewController" ]) {
          HangViewController * hangManViewController = [segue destinationViewController];
-         hangManViewController.state = self.currentState;
+         hangManViewController.state = self.currentSate;
          
      }
      
