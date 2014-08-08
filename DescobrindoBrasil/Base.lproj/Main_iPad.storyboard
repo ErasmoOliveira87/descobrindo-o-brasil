@@ -508,7 +508,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descobrindo o Brasil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUZ-q2-LhN">
-                                <rect key="frame" x="20" y="0.0" width="728" height="169"/>
+                                <rect key="frame" x="20" y="47" width="728" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="53"/>
                                 <color key="textColor" red="0.066666670143604279" green="0.18039216101169586" blue="0.086274512112140656" alpha="1" colorSpace="deviceRGB"/>
