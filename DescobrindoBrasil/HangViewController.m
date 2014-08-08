@@ -89,7 +89,7 @@
     else if (control == 2)
     {
         self.state.points = self.pontuation;
-        
+        [self performSegueWithIdentifier:@"score" sender:self];
     }
     
 }
