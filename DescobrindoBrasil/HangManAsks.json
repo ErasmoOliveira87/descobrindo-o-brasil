@@ -4,8 +4,11 @@
                       {
                       "FREVO": "Ritmo dançado com guarda-chuvas coloridos."
                       ,
-    
+                      
                       "CARUARU": "Cidade que é considerada a capital do forró."
+                      ,
+                      
+                      "LAMPIÃO": "Como era conhecido Virgulino Ferreira da Silva"
                       }
     
                ,
@@ -17,7 +20,6 @@
                       
                       "CHIMARRÃO": "Feito com erva-mate, tomado em cuia e bomba apropriada, é uma marca registrada do gaúcho. "
                       }
-                      
                ,
     
                "AM":
@@ -41,12 +43,99 @@
                       {
                       "NOVE DE JULHO" :"Data que é comemorada a Revolução Constitucionalista"
                       }
-                   
+    
                ,
     
                "MG":
                       {
                       "PÃO DE QUEIJO" :"Pão de origem mineira que atualmente está presente em todas as padarias brasileiras"
+                      }
+    
+               ,
+    
+               "SC":
+                      {
+                      "RIO URUGUAI" :"Rio que faz fronteira entre Santa Catarina e o Rio Grande do Sul"
+                      }
+    
+               ,
+    
+               "RJ":
+                      {
+                      "CRISTO REDENTOR" :"Monumento que é o cartão postal da cidade"
+                      }
+    
+               ,
+    
+               "MS":
+                      {
+                      "PÃO DE QUEIJO" :"Pão de origem mineira que atualmente está presente em todas as padarias brasileiras"
+                      }
+    
+               ,
+    
+               "MT":
+                      {
+                      "ONÇA PINTADA" :"Felino comum na região"
+                      }
+    
+               ,
+    
+               "PR":
+                      {
+                      "PANTEON DOS HEROES" :"Local onde jazem os corpos dos legalistas que combateram no Cerco da Lapa."
+                      ,
+                      
+                      "SALTO SÃO FRANCISCO" :"A maior queda de água do sul do Brasil."
+                      }
+    
+               ,
+    
+               "GO":
+                      {
+                      "PÃO DE QUEIJO" :"Pão de origem mineira que atualmente está presente em todas as padarias brasileiras"
+                      }
+    
+               ,
+    
+               "ES":
+                      {
+                      "PICO DA BANDEIRA" :"É o pico culminante do estado, e terceiro ponto mais alto do Brasil."
+                      }
+    
+               ,
+    
+               "BA":
+                      {
+                      "ACARAJÉ" :"Comida tipica da região"
+                      }
+    
+               ,
+    
+               "RO":
+                      {
+                      "PÃO DE QUEIJO" :"Pão de origem mineira que atualmente está presente em todas as padarias brasileiras"
+                      }
+    
+               ,
+    
+               "AC":
+                      {
+                      "PASSARELA JOAQUIM MACEDO" :"Símbolo da capital acriana"
+                      }
+    
+               ,
+    
+               "TO":
+                      {
+                      "JALAPÃO" :"Famoso parque estadual de ecoturismo."
+                      }
+    
+               ,
+    
+               "CE":
+                      {
+                      "CARNAÚBA" :"Arvore simbolo do Ceará que ocupa grandes extensões no sertão."
                       }
     
     
