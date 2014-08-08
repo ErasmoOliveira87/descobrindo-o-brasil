@@ -47,6 +47,7 @@
             [self.statesWithFlag addObject:state];
         }
     }
+    
     [self.brazilView placeFlagsOnStates:self.statesWithFlag];
     
     

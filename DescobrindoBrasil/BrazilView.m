@@ -87,7 +87,7 @@
 -(void)placeFlagsOnStates:(NSArray *)states{
     
     
-    for (NSString *state in states) {
+    for (State *state in states) {
         
         
         
@@ -97,7 +97,7 @@
         
         [self.mapContainerView addSubview:flag];
         
-        NSValue *pointValue = [self.flagLocationForState objectForKey:state];
+        NSValue *pointValue = [self.flagLocationForState objectForKey:state.name];
         
         
         
