@@ -11,25 +11,16 @@
 @interface FlagView()
 
 
-
-
-
 @end
 
 
 @implementation FlagView
 
 
-
-
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        
-     //   self.flagView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
         
         [self buildFlag];
         
@@ -40,30 +31,15 @@
 }
 
 
-
 -(void)buildFlag{
 
-    UIImage *imageteste = [UIImage imageNamed:@"flag-of-brazil_t"];
+    UIImage *imageteste = [UIImage imageNamed:@"flag"];
     
-    UIImage *imageTeste = [[UIImage alloc]initWithCGImage:imageteste.CGImage scale:5.5 orientation:UIImageOrientationUp ];
-    
-   // [self.flagView setImage:imageteste];
+    UIImage *imageTeste = [[UIImage alloc]initWithCGImage:imageteste.CGImage scale:8.5 orientation:UIImageOrientationUp ];
     
     self.flagView= [[UIImageView alloc]initWithImage:imageTeste];
-    
-    
 
 }
 
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
