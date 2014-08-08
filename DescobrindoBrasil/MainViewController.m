@@ -16,6 +16,7 @@
 
 @property(nonatomic, strong) NSString *  currentState;
 
+
 @end
 
 @implementation MainViewController
@@ -25,6 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    //  self.statewithFlag = [[NSMutableArray alloc]initWithArray:@[@"SP" ]];
+    
+    self.statesWithFlag = [[NSMutableArray alloc]init];
     
     //recebe eventos de toque do mapa
     self.brazilView.overlay.delegate = self;
@@ -36,7 +42,10 @@
 
     [super viewDidAppear:YES];
     
+    [self.brazilView placeFlagsOnStates:self.statesWithFlag];
     
+    
+    self.brazilView.overlay.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,12 +60,15 @@
 -(void)tapOnState:(NSString *)state {
 
     self.tappedState = [StatesRepository stateForName:state];
-    self.currentState = state;
+    
             [self performSegueWithIdentifier:@"HangViewController" sender:self];
     
     
 }
 
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation

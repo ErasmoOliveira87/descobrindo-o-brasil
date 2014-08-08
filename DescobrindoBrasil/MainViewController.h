@@ -15,4 +15,7 @@
 
 @interface MainViewController : UIViewController <mapOverlayDelegate>
 
+
+@property(nonatomic,strong)NSMutableArray *statesWithFlag;
+
 @end

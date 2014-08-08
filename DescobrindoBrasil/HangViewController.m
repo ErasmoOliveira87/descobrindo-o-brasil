@@ -21,6 +21,7 @@
 @property(strong,nonatomic) UIAlertView *alertViewMensagem;
 @property(weak,nonatomic)NSString *valueButtonChancer;
 @property (nonatomic, strong) NSString * sortedWord;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 @property (nonatomic) int pontuation;
 
@@ -45,7 +46,7 @@
 {
     [super viewDidLoad];                                                           // estático
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
-    [self.view addSubview:self.hangManView];
+    [super viewDidLoad];                                                           // estático
 
     [self reset];
     
@@ -57,12 +58,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    
+    [self.keyboardView resetKeyboard];
     [self reset];
-    
-    
-
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,7 +90,7 @@
     {
         self.state.points = self.pontuation;
         
-        [self performSegueWithIdentifier:@"score" sender:self];
+        self.state.points = self.pontuation;
         
     }
     
@@ -174,6 +171,7 @@
 }
 
 -(void)reset{
+    self.stateLabel.text = self.state.name;
     self.errors = 0;
     
     if([self.state.questions count] == 0) {
@@ -185,7 +183,7 @@
     self.sortedWord = question.answer;
     self.askLabel.text = question.question;
     [self.wordView resetWithWord:self.sortedWord];
-    [self.keyboardView buttonEnable];
+    [self.keyboardView resetKeyboard];
     [self.hangManView eraseHangMan];
 }
 

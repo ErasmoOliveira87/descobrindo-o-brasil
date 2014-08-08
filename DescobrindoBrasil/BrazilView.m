@@ -7,12 +7,14 @@
 //
 
 #import "BrazilView.h"
-#import "FragView.h"
 
 @interface BrazilView ()
 
 //contém a imagem do mapa + overlay para detectar toques
 @property (strong, nonatomic) UIView *mapContainerView;
+
+@property(strong,nonatomic)NSDictionary *flagLocationForState;
+
 
 @end
 
@@ -27,9 +29,8 @@
     if (self)
         [self initialization];
     
-    self.flagView = [[FragView alloc]init];
+    self.flagView = [[FlagView alloc]init];
     
-   // [self addFlag:self.flagView.flagView];
     
     return self;
 }
@@ -41,9 +42,8 @@
     if (self)
         [self initialization];
     
-    self.flagView = [[FragView alloc]init];
+    self.flagView = [[FlagView alloc]init];
     
-  //  [self addFlag:self.flagView.flagView];
     
     return self;
 }
@@ -74,6 +74,11 @@
     self.maximumZoomScale = 2.0;
     self.minimumZoomScale = 0.75;
     self.zoomScale = 0.75;
+    
+    
+    [self coordinatesOfStates];
+    
+    
 }
 
 #pragma mark UIScrollView Delegate

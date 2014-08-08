@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FragView : UIView
+@interface FlagView : UIView
 
 
 @property (nonatomic, strong) UIImageView *flagView;
