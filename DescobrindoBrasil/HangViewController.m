@@ -90,8 +90,6 @@
     {
         self.state.points = self.pontuation;
         
-        self.state.points = self.pontuation;
-        
     }
     
 }

@@ -217,10 +217,10 @@
 		E2341F091973F94D0030043F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E2160D251993A57B00E9CCF0 /* HangManAsks.json */,
 				AA1D600619926FB300F69A0F /* States */,
 				AA1D6007199277C800F69A0F /* HangmanQuestion.h */,
 				AA1D6008199277C800F69A0F /* HangmanQuestion.m */,
+				E2160D251993A57B00E9CCF0 /* HangManAsks.json */,
 			);
 			name = Model;
 			sourceTree = "<group>";

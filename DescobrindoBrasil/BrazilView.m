@@ -48,6 +48,7 @@
     return self;
 }
 
+
 -(void)initialization {
     
     UIImage *brazilMap = [UIImage imageNamed:@"brazil_blank_map"];
@@ -77,6 +78,65 @@
     
     
     [self coordinatesOfStates];
+    
+    
+}
+
+#pragma mark Flags
+
+-(void)placeFlagsOnStates:(NSArray *)states{
+    
+    
+    for (NSString *state in states) {
+        
+        
+        
+        FlagView *flag = [[FlagView alloc]init];
+        
+        
+        
+        [self.mapContainerView addSubview:flag];
+        
+        NSValue *pointValue = [self.flagLocationForState objectForKey:state];
+        
+        
+        
+        flag.center = [pointValue CGPointValue];
+        
+        
+        
+        
+    }
+    
+    
+    
+}
+
+
+-(void)coordinatesOfStates{
+    
+    self.flagLocationForState= @{ @"SP":[NSValue valueWithCGPoint:CGPointMake(630.666687, 704)],
+                                  @"MG":[NSValue valueWithCGPoint:CGPointMake(733.333313, 613.333313)],
+                                  @"RJ":[NSValue valueWithCGPoint:CGPointMake(780, 706.666687)],
+                                  @"ES":[NSValue valueWithCGPoint:CGPointMake(824, 640)],
+                                  @"PR":[NSValue valueWithCGPoint:CGPointMake(570.666687, 757.333313)],
+                                  @"SC":[NSValue valueWithCGPoint:CGPointMake(598.666687, 828)],
+                                  @"RS":[NSValue valueWithCGPoint:CGPointMake(537.333313, 876)],
+                                  @"GO":[NSValue valueWithCGPoint:CGPointMake(621.333313, 537.333313)],
+                                  @"MT":[NSValue valueWithCGPoint:CGPointMake(464, 466.666656)],
+                                  @"MS":[NSValue valueWithCGPoint:CGPointMake(489.333344, 649.333313)],
+                                  @"DF":[NSValue valueWithCGPoint:CGPointMake(654.666687, 538.666687)],
+                                  @"BA":[NSValue valueWithCGPoint:CGPointMake(816, 461.333344)],
+                                  @"AM":[NSValue valueWithCGPoint:CGPointMake(252, 250.666672)],
+                                  @"PE":[NSValue valueWithCGPoint:CGPointMake(906.666687, 358.666656)],
+                                  @"SE":[NSValue valueWithCGPoint:CGPointMake(914.666687, 420)],
+                                  @"AL":[NSValue valueWithCGPoint:CGPointMake(938.666687, 397.333344)],
+                                  @"PB":[NSValue valueWithCGPoint:CGPointMake(950.666687, 328)],
+                                  @"RN":[NSValue valueWithCGPoint:CGPointMake(941.333313, 294.666656)],
+                                  @"CE":[NSValue valueWithCGPoint:CGPointMake(865.333313, 276)],
+                                  @"PI":[NSValue valueWithCGPoint:CGPointMake(794.666687, 329.333344)],
+                                  @"MA":[NSValue valueWithCGPoint:CGPointMake(706.666687, 262.666656)]};
+    NSLog(@"coordinatesOfStates");
     
     
 }
