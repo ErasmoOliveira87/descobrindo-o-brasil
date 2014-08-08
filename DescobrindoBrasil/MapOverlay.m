@@ -10,7 +10,7 @@
 
 //deve ser true apenas para debug
 //setar true para que as zonas de toque sejam desenhadas na tela
-#define drawStateTouchZones true
+#define drawStateTouchZones false
 
 @interface MapOverlay ()
 
@@ -390,6 +390,8 @@
     
     CGPathRelease(path);
     
+    
+    
     //guarda o dicionario como imutável
     _stateForPath = stateNameForPath;
     
@@ -424,8 +426,10 @@
         
             if([path containsPoint:tapLocation]) {
                 
-                if(self.delegate != nil)
+                if(self.delegate != nil) {
+                    NSLog(@"%@", [self.stateForPath objectForKey:path]);
                     [self.delegate tapOnState:[self.stateForPath objectForKey:path]];
+                }
                 else
                     NSLog(@"Delegate do MapOverlay não setado");
                 
