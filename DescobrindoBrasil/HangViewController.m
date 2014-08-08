@@ -22,8 +22,8 @@
 @property(weak,nonatomic)NSString *valueButtonChancer;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) NSString * sortedWord;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 @property int pontuation;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 
 
 
@@ -60,12 +60,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    
+    [self.keyboardView resetKeyboard];
     [self reset];
-    
-    
-
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -186,6 +182,7 @@
 }
 
 -(void)reset{
+    self.stateLabel.text = self.state;
     self.errors = 0;
     [self.hangManData sortAskFor:self.state];
     NSDictionary * askDictionary = [[NSDictionary alloc]initWithDictionary:[self.hangManData sortAskFor:self.state]];

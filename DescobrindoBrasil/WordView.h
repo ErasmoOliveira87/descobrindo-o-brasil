@@ -16,6 +16,7 @@
 -(int)selectChar:(char) key;
 
 -(void)resetWithWord:(NSString*)word;
+-(void)resetHangWord;
 
 
 

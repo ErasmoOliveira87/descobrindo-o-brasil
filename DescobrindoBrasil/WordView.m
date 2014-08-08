@@ -104,7 +104,9 @@
 }
 
 
-
+-(void)resetHangWord{
+    self.hangWord = nil;
+}
 
 
 /*
