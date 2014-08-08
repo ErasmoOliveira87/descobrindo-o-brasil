@@ -42,6 +42,11 @@
 
     [super viewDidAppear:YES];
     
+    for (State *state in [StatesRepository sharedStates]) {
+        if (state.points > 0) {
+            [self.statesWithFlag addObject:state];
+        }
+    }
     [self.brazilView placeFlagsOnStates:self.statesWithFlag];
     
     
