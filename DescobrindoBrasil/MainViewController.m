@@ -37,14 +37,22 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated
+{
     
     [super viewDidAppear:YES];
     
     [self.brazilView placeFlagsOnStates:self.statewithFlag];
     
-    
     self.brazilView.overlay.delegate = self;
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,19 +74,19 @@
     
 }
 
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
-     if ([[segue identifier] isEqualToString:@"HangViewController" ]) {
-         HangViewController * hangManViewController = [segue destinationViewController];
-         hangManViewController.state = self.currentState;
-         
-     }
-     
- }
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"HangViewController" ]) {
+        HangViewController * hangManViewController = [segue destinationViewController];
+        hangManViewController.state = self.currentState;
+        
+    }
+    
+}
 @end
