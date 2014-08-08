@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     
-  //  self.statewithFlag = [[NSMutableArray alloc]initWithArray:@[@"SP" ]];
+    //  self.statewithFlag = [[NSMutableArray alloc]initWithArray:@[@"SP" ]];
     
     self.statewithFlag = [[NSMutableArray alloc]init];
     
@@ -38,13 +38,13 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-
+    
     [super viewDidAppear:YES];
     
     [self.brazilView placeFlagsOnStates:self.statewithFlag];
     
-   
-        self.brazilView.overlay.delegate = self;
+    
+    self.brazilView.overlay.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
