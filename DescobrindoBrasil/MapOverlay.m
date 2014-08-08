@@ -427,7 +427,6 @@
             if([path containsPoint:tapLocation]) {
                 
                 if(self.delegate != nil) {
-                    NSLog(@"%@", [self.stateForPath objectForKey:path]);
                     [self.delegate tapOnState:[self.stateForPath objectForKey:path]];
                 }
                 else
