@@ -103,12 +103,15 @@
     return self;
 }
 
+<<<<<<< HEAD
 
 -(void)resetHangWord{
     self.hangWord = nil;
 }
 
 
+=======
+>>>>>>> b5b378aa686a23f894ead4a576cf50f6ee58ed80
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.

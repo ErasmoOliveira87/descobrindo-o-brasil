@@ -38,7 +38,10 @@
     [self animateKeyBoard:sender];
     
     sender.enabled = NO;
+<<<<<<< HEAD
     //sender.hidden = YES;
+=======
+>>>>>>> b5b378aa686a23f894ead4a576cf50f6ee58ed80
 }
 
 -(void)resetKeyboard{
@@ -49,7 +52,10 @@
             
             UIButton *button = (UIButton *) subView;
             button.enabled = YES;
+<<<<<<< HEAD
             //button.hidden = NO;
+=======
+>>>>>>> b5b378aa686a23f894ead4a576cf50f6ee58ed80
             button.alpha = 1.0;
             button.transform = CGAffineTransformMakeScale(1.25, 1.25);
         }
@@ -63,7 +69,10 @@
         pressedKey.transform = CGAffineTransformMakeScale(2.5, 2.5);
         pressedKey.transform = CGAffineTransformMakeRotation(360.0);
         pressedKey.alpha = 0.0;
+<<<<<<< HEAD
         //pressedKey.hidden = YES;
+=======
+>>>>>>> b5b378aa686a23f894ead4a576cf50f6ee58ed80
 
     }];
     
