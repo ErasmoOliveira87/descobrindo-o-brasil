@@ -17,14 +17,14 @@
     if(self) {
         
         _name = stateName;
-        _questions = [State questionsForStateName:stateName];
-        
+        _hangmanQuestions = [State questionsForStateName:stateName];
+        _hangmanPoints = 0;
     }
     
     return self;
 }
 
-//le as perguntas do JSON
+//lê as perguntas do JSON
 +(NSArray*)questionsForStateName:(NSString*)name {
     
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"HangManAsks" ofType:@"json"];
@@ -36,22 +36,25 @@
     
     NSMutableArray *questionsArray = [[NSMutableArray alloc] init];
     
-    for (NSString* question in questionsDict.keyEnumerator) {
+    for (NSString* answer in questionsDict) {
         
-        [questionsArray addObject:[[HangmanQuestion alloc] initWithQuestion:[questionsDict objectForKey:question] Answer:question]];
+        [questionsArray addObject:[[HangmanQuestion alloc] initWithQuestion:[questionsDict objectForKey:answer] Answer:answer]];
     }
     
     return questionsArray;
 }
 
+#pragma mark getters & setters
 
--(int)getStars {
-    
-    if (self.points == 200) {
+-(int)hangmanStars
+{
+    if (self.hangmanPoints > 100) {
         return 3;
     }
-    else if (self.points >=100)
+    else if (self.hangmanPoints >=90)
         return 2;
+    else if (self.hangmanPoints >=40)
+        return 1;
     else
     {
         return 0;

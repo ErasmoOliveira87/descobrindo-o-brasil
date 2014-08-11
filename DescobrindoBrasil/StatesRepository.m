@@ -10,6 +10,7 @@
 
 @implementation StatesRepository
 
+//Array estático de estados
 +(NSArray*)sharedStates {
 
     static NSArray* states;
@@ -29,6 +30,7 @@
     return states;
 }
 
+//Busca estado no sharedStates e retorna
 +(State*)stateForName:(NSString *)stateName {
     
     for (State* state in [self sharedStates]) {

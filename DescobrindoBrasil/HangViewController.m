@@ -19,11 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *chanceButton;
 @property(strong,nonatomic) UIAlertView *alertView;
 @property(strong,nonatomic) UIAlertView *alertViewMensagem;
-@property(weak,nonatomic)NSString *valueButtonChancer;
+
 @property (nonatomic, strong) NSString * sortedWord;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
-@property (nonatomic) int pontuation;
 
 
 
@@ -46,7 +45,6 @@
 {
     [super viewDidLoad];                                                           // estático
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
-    [super viewDidLoad];                                                           // estático
 
     [self reset];
     
@@ -88,33 +86,9 @@
     }    //Se o control for 2 o jogador conquista a vitória.
     else if (control == 2)
     {
-        self.state.points = self.pontuation;
         [self performSegueWithIdentifier:@"score" sender:self];
     }
     
-}
-
--(int)stars
-{
-    if (self.pontuation >150) {
-        return 3;
-    }
-    else if (self.pontuation >=90)
-        return 2;
-    else if (self.pontuation >=40)
-        return 1;
-    else
-    {
-        return 0;
-    }
-    
-}
-
--(int)pontuation {
-    
-    int score = (100 - self.errors*10);
-    
-    return score;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -134,7 +108,7 @@
                 //Compara a a palavra sorteada com a palavra digitada!
                 if([self.sortedWord isEqualToString:wordChance] ){
                     
-                    self.state.points = (self.pontuation+100);
+                    self.state.hangmanPoints += 100;
                     [self performSegueWithIdentifier:@"score" sender:self];
                     
                 }
@@ -161,9 +135,13 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"score"]) {
+        
         ScoreViewController * scoreViewController = [segue destinationViewController];
-        scoreViewController.score = self.pontuation;
-        scoreViewController.stars = [self stars];
+        
+        self.state.hangmanPoints += (100 - self.errors*10);
+        
+        scoreViewController.score = self.state.hangmanPoints;
+        scoreViewController.stars = self.state.hangmanStars;
         
     }
 }
@@ -172,12 +150,12 @@
     self.stateLabel.text = self.state.name;
     self.errors = 0;
     
-    if([self.state.questions count] == 0) {
-        NSLog(@"erro, estado sem perguntas");
+    if([self.state.hangmanQuestions count] == 0) {
+        NSLog(@"erro, estado sem perguntas, mudando para PE");
         self.state = [StatesRepository stateForName:@"PE"];
     }
     
-    HangmanQuestion * question = [self.state.questions objectAtIndex:arc4random() % [self.state.questions count]];
+    HangmanQuestion * question = [self.state.hangmanQuestions objectAtIndex:arc4random() % [self.state.hangmanQuestions count]];
     self.sortedWord = question.answer;
     self.askLabel.text = question.question;
     [self.wordView resetWithWord:self.sortedWord];
@@ -191,8 +169,6 @@
                                                 message:@"Boa Sorte!" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
     
     self.alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    
-    self.valueButtonChancer = sender.currentTitle;
     
     [self.alertView show];
     

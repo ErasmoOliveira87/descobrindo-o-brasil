@@ -42,13 +42,17 @@
 
     [super viewDidAppear:YES];
     
+    //posiciona a bandeira em estados com estrela no Hangman
     for (State *state in [StatesRepository sharedStates]) {
-        if (state.points > 0) {
+        
+        if (state.hangmanStars > 0) {
             [self.statesWithFlag addObject:state];
         }
+        
     }
-    [self.brazilView placeFlagsOnStates:self.statesWithFlag];
     
+    //posiciona bandeiras
+    [self.brazilView placeFlagsOnStates:self.statesWithFlag];
     
     self.brazilView.overlay.delegate = self;
 }
@@ -71,9 +75,6 @@
     
 }
 
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation

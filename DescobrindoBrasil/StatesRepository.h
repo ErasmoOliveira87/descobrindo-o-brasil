@@ -13,10 +13,10 @@
 
 @interface StatesRepository : NSObject
 
-//array com todos os estados
+// Retorna array com todos os estados
 +(NSArray*)sharedStates;
 
-//retorna o estado pela sigla
+// Retorna o estado pela sigla
 +(State*)stateForName:(NSString*)stateName;
 
 @end

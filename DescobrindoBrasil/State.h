@@ -11,12 +11,13 @@
 
 @interface State : NSObject
 
-@property (nonatomic) int points;
-@property (nonatomic) int stars;
-
+//sigla do estado
 @property (nonatomic, strong) NSString *name;
 
-@property (nonatomic, strong) NSArray *questions;
+//informacoes do jogo Hangman
+@property (nonatomic) int hangmanPoints;
+@property (nonatomic) int hangmanStars;
+@property (nonatomic, strong) NSArray *hangmanQuestions;
 
 -(State*)initWithName:(NSString*)stateName;
 
