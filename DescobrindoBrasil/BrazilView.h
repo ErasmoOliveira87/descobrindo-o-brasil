@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MapOverlay.h"
 #import "FlagView.h"
+#import "State.h"
 
 @interface BrazilView : UIScrollView <UIScrollViewDelegate>
 
