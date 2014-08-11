@@ -19,10 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *chanceButton;
 @property(strong,nonatomic) UIAlertView *alertView;
 @property(strong,nonatomic) UIAlertView *alertViewMensagem;
-
 @property (nonatomic, strong) NSString * sortedWord;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
+
 
 
 
@@ -43,7 +42,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];                                                           // estático
+    [super viewDidLoad];
     self.hangManView = [[HangManView alloc] initWithFrame:CGRectMake(20, 20, 728, 516)];
 
     [self reset];
